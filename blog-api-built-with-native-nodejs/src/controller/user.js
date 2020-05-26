@@ -1,15 +1,22 @@
-const user = require('../service/user');
+const assert = require('assert');
+const {
+  Success,
+  Failure,
+} = require('../model');
+const userService = require('../service/user');
 
-const login = req => {
+
+const login = async req => {
   const {
     username,
     password,
   } = req.body;
-  const result = user.login({
+  assert(username && password, 'missing parameter username/password');
+  const result = await userService.login({
     username,
     password,
   });
-  return result;
+  return new Success(result);
 }
 
 module.exports = {

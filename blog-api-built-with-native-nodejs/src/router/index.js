@@ -1,9 +1,14 @@
+const assert = require('assert');
 const querystring = require('querystring');
 const dispatcher = require('./dispatcher');
+const {
+  Failure,
+} = require('../model');
 
 // { a: '2', b: [ 'yyy', '888' ], c: 'true' }
 // console.log(querystring.parse('a=2&b=yyy&b=888&c=true'));
 
+// parse http request body
 const getBody = req => {
   return new Promise((resolve, reject) => {
     const {
@@ -43,7 +48,21 @@ const getBody = req => {
   });
 }
 
+// global error handle
+let _res = null;
+process.on('unhandledRejection', error => {
+  /** all errors will be thrown to the client,
+   * such as assert.AssertionError etc.
+  */
+  console.log('error: ', error);
+  const err = new Failure(error.message);
+  _res.end(JSON.stringify(err));
+});
+
+// handle request
 const handler = (req, res) => {
+  _res = res;
+
   const {
     method,
     url,
@@ -60,7 +79,14 @@ const handler = (req, res) => {
     const dispatcherValue = dispatcher[dispatcherKey];
     if (dispatcherValue) {
       const result = dispatcherValue.apply(null, [req]);
-      res.end(JSON.stringify(result));
+      if (result instanceof Promise) {
+        result.then(data => {
+          res.end(JSON.stringify(data));
+        });
+      } else {
+        res.end(JSON.stringify(result));
+      }
+      
       return;
     }
 

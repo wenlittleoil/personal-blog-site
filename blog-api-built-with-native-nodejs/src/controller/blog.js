@@ -1,49 +1,69 @@
-const blog = require('../service/blog');
+const assert = require('assert');
+const _ = require('lodash');
 const {
   Success,
   Failure,
 } = require('../model');
+const blogService = require('../service/blog');
 
 const getBlogList = req => {
   const {
     uid,
+    username,
+    keyword,
   } = req.query;
-  const result = blog.getBlogList(uid);
-  return new Success(result);
+  const result = blogService.getBlogList({
+    uid,
+    username,
+    keyword,
+  });
+  return result.then(data => {
+    return new Success(data);
+  });
 }
 
 const getBlogDetail = req => {
   const {
     id,
   } = req.query;
-  const result = blog.getBlogDetail(id);
-  return new Failure(result);
+  assert(id, 'Missing parameters id');
+  const result = blogService.getBlogDetail(id);
+  return result.then(data => {
+    return new Success(data);
+  });
 }
 
-const createBlog = req => {
+const createBlog = async req => {
   const {
+    uid = 2, // temporary params
     title,
     content,
   } = req.body;
-  const result = blog.createBlog({
+  assert(uid && title && content, 'missing parameters uid/title/content');
+  const result = await blogService.createBlog({
+    uid,
     title,
     content,
   });
-  return result;
+  return new Success(result);
 }
 
-const updateBlog = req => {
+const updateBlog = async req => {
   const {
     id,
     title,
     content,
   } = req.body;
-  const result = blog.updateBlog({
+  assert(id, 'missing parameter id');
+  assert(title || content, 'missing parameter title or content');
+
+  const updateParams = _.omitBy({
     id,
     title,
     content,
-  });
-  return result;
+  }, val => !val);
+  const result = await blogService.updateBlog(updateParams);
+  return new Success(result);
 }
 
 module.exports = {

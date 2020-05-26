@@ -1,34 +1,48 @@
-const getBlogList = req => {
-  return [{
-    id: 1,
-    title: 'aaa',
-    content: 'AAA',
-  }];
-}
+const blogDao = require('../dao/blog');
 
-const getBlogDetail = req => {
+function Service() {
   return {
-    id: 1,
-    title: 'aaa',
-    content: 'AAA',
+
+    getBlogList: ({
+      uid,
+      username,
+      keyword,
+    }) => {
+      const result = blogDao.getBlogList({
+        uid,
+        username,
+        keyword,
+      });
+      return result;
+    },
+    
+    getBlogDetail: async id => {
+      const result = await blogDao.getBlogDetail(id);
+      return result[0];
+    },
+    
+    createBlog: async ({
+      uid,
+      title,
+      content,
+    }) => {
+      const result = await blogDao.createBlog({
+        uid,
+        title,
+        content,
+      });
+      return {
+        id: result.insertId,
+      }
+    },
+    
+    updateBlog: async params => {
+      const result = await blogDao.updateBlog(params);
+      return {
+        id: params.id,
+      }
+    },
   }
 }
 
-const createBlog = req => {
-  return {
-    id: 6,
-  }
-}
-
-const updateBlog = req => {
-  return {
-    id: 8,
-  }
-}
-
-module.exports = {
-  getBlogList,
-  getBlogDetail,
-  createBlog,
-  updateBlog,
-}
+module.exports = Service();
