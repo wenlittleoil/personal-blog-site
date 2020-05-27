@@ -58,6 +58,10 @@ process.on('unhandledRejection', error => {
   const err = new Failure(error.message);
   _res.end(JSON.stringify(err));
 });
+// process.on('uncaughtException', error => {
+//   console.log('uncaughtException');
+// });
+
 
 // handle request
 const handler = (req, res) => {
@@ -91,7 +95,10 @@ const handler = (req, res) => {
     }
 
     res.end('"404 Not Found"');
-  });
+  })
+  // .catch(err => {
+  //   console.log('err has been caught.')
+  // });
 }
 
 module.exports = handler;
