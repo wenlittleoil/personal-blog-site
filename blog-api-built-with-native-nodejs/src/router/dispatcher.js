@@ -6,6 +6,7 @@ const {
 } = require('../controller/blog');
 const {
   login,
+  loginTest,
 } = require('../controller/user');
 
 const dispatcher = {
@@ -15,6 +16,7 @@ const dispatcher = {
   'post /api/blog/update': updateBlog,
   
   'post /api/user/login': login,
+  'get /api/user/login-test': loginTest,
 }
 
 module.exports = dispatcher;

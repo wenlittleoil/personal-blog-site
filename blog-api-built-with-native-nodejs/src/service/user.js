@@ -11,14 +11,16 @@ function Service() {
         password,
       });
       if (result.length) {
+        // login successfully
         return {
           status: 1,
-          user_info: result[0],
+          user: result[0],
         }
       }
+      // login fail
       return {
         status: 0,
-        user_info: null,
+        user: null,
       };
     }
   }
