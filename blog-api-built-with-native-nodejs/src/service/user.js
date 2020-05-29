@@ -1,7 +1,9 @@
+const assert = require('assert');
 const userDao = require('../dao/user');
 
 function Service() {
   return {
+
     login: async ({
       username,
       password,
@@ -10,19 +12,15 @@ function Service() {
         username,
         password,
       });
-      if (result.length) {
-        // login successfully
-        return {
-          status: 1,
-          user: result[0],
-        }
-      }
-      // login fail
-      return {
-        status: 0,
-        user: null,
-      };
+      return result;
+    },
+
+    getUserInfoById: async id => {
+      assert(id, 'missing parameter id');
+      const result = await userDao.getUserInfoById(id);
+      return result[0];
     }
+
   }
 }
 

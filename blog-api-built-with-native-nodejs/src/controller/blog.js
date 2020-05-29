@@ -35,10 +35,10 @@ const getBlogDetail = req => {
 
 const createBlog = async req => {
   const {
-    uid = 2, // temporary params
     title,
     content,
   } = req.body;
+  const { id: uid } = req.user;
   assert(uid && title && content, 'missing parameters uid/title/content');
   const result = await blogService.createBlog({
     uid,
@@ -54,10 +54,12 @@ const updateBlog = async req => {
     title,
     content,
   } = req.body;
+  const { id: uid } = req.user;
   assert(id, 'missing parameter id');
   assert(title || content, 'missing parameter title or content');
 
   const updateParams = _.omitBy({
+    uid,
     id,
     title,
     content,

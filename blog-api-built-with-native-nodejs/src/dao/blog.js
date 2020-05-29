@@ -47,6 +47,7 @@ function Dao() {
       return db.query(sql, [title, content, uid]);
     },
     updateBlog: ({
+      uid,
       id,
       ...obj
     }) => {
@@ -56,6 +57,7 @@ function Dao() {
         update blog set
         ${str}
         where id = ${id}
+        and uid = ${uid}
       `;
       return db.query(sql);
     },

@@ -50,7 +50,19 @@ const handler = (req, res) => {
     const dispatcherKey = `${method.toLowerCase()} ${path}`;
     const dispatcherValue = dispatcher[dispatcherKey];
     if (dispatcherValue) {
-      const result = dispatcherValue.apply(null, [req]);
+
+      if (dispatcherValue.auth && !req.user) {
+        // login filter
+        const data = new Failure({
+          login_status: 0,
+          login_info: 'unlogin',
+          user: null,
+        });
+        res.end(JSON.stringify(data));
+        return;
+      }
+
+      const result = dispatcherValue.handle.apply(null, [req]);
       if (result instanceof Promise) {
         result.then(data => {
           res.end(JSON.stringify(data));

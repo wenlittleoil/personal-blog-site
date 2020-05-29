@@ -39,6 +39,8 @@ const mountSession = req => {
     req.session = generateSession();
     sessions[req.session.id] = req.session;
   }
+  // compatible with non-session login methods in the future
+  req.user = req.session.user;
 }
 
 module.exports = {

@@ -16,36 +16,53 @@ const login = async req => {
     username,
     password,
   });
-  
-  const {
-    user,
-  } = result;
-  if (user) {
+
+  if (result.length) {
+    // login successfully
+    const user = result[0];
+
+    // update req.session, req.user and sessions
     req.session.user = {
       id: user.id,
     };
     sessions[req.session.id] = req.session;
-  }
+    req.user = user;
 
-  return new Success(result);
-}
-
-const loginTest = async req => {
-  if (req.session.user) {
     return new Success({
       login_status: 1,
-      info: 'already login',
-      session: req.session,
+      login_info: 'logined',
+      user,
+    });
+  } else {
+    // login fail
+    return new Failure({
+      login_status: 0,
+      login_info: 'unlogin',
+      user: null,
+    });
+  }
+}
+
+const getUserInfo = async req => {
+  if (req.user) {
+    const {
+      id,
+    } = req.user;
+    const user = await userService.getUserInfoById(id);
+    return new Success({
+      login_status: 1,
+      login_info: 'logined',
+      user,
     });
   }
   return new Failure({
     login_status: 0,
-    info: 'warn: unlogin!',
-    session: req.session,
+    login_info: 'unlogin',
+    user: null,
   });
 }
 
 module.exports = {
   login,
-  loginTest,
+  getUserInfo,
 }

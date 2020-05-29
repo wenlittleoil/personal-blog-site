@@ -6,17 +6,31 @@ const {
 } = require('../controller/blog');
 const {
   login,
-  loginTest,
+  getUserInfo,
 } = require('../controller/user');
 
 const dispatcher = {
-  'get /api/blog/list': getBlogList,
-  'get /api/blog/detail': getBlogDetail,
-  'post /api/blog/create': createBlog,
-  'post /api/blog/update': updateBlog,
+  'get /api/blog/list': {
+    handle: getBlogList,
+  },
+  'get /api/blog/detail': {
+    handle: getBlogDetail,
+  },
+  'post /api/blog/create': {
+    auth: true,
+    handle: createBlog,
+  },
+  'post /api/blog/update': {
+    auth: true,
+    handle: updateBlog,
+  },
   
-  'post /api/user/login': login,
-  'get /api/user/login-test': loginTest,
+  'post /api/user/login': {
+    handle: login,
+  },
+  'get /api/user/info': {
+    handle: getUserInfo,
+  },
 }
 
 module.exports = dispatcher;
