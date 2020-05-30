@@ -38,10 +38,9 @@ const handler = (req, res) => {
   req.query = query;
   req.cookie = parseCookie(req);
   mountSession(req).then(args => {
-    
-  });
-
-  parseBody(req).then(body => {
+    return parseBody(req);
+  })
+  .then(body => {
     req.body = body;
     res.setHeader('Content-Type', 'application/json');
     res.setHeader(

@@ -1,15 +1,8 @@
 const sessionConfig = require('../config/conf').session;
 const db = require('../util/db');
 
-db.redis.del('name').then((res, reply) => console.log(res, reply))
-db.redis.set('hello', 'wenshaoyou').then(result => {
-  db.redis.get('hello').then(result => {
-    console.log(result);
-  })
-});
-
 // global sessions center
-const sessions = {};
+// const sessions = {};
 
 // generate new session object
 const generateSession = () => {
@@ -58,10 +51,9 @@ const mountSession = async req => {
   const {
     [sessionConfig.key]: sid,
   } = req.cookie;
-
-  return db.redis.get(sid).then(session => {
-
-    if (sid && session) {
+  const getCurrentSession = sid ? db.redis.get(sid) : Promise.resolve(null);
+  return getCurrentSession.then(session => {
+    if (session) {
       const nowTime = Date.now();
       const expireTime = session.cookie.expire;
       if (nowTime > expireTime) {
@@ -71,7 +63,6 @@ const mountSession = async req => {
         db.redis.set(req.session.id, req.session);
       } else {
         // current session not expired, update expire time
-  
         session.cookie.expire = nowTime + sessionConfig.EXPIRE;
         db.redis.set(sid, session);
         req.session = session;
@@ -82,11 +73,10 @@ const mountSession = async req => {
     }
     // compatible with non-session login methods in the future
     req.user = req.session.user;
-
   });
 }
 
 module.exports = {
-  sessions,
+  // sessions,
   mountSession,
 }

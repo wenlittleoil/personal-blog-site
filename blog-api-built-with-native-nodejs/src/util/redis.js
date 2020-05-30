@@ -6,8 +6,6 @@ const config = require('../config/conf');
 
 const client = redis.createClient(config.db.redis);
 
-client.del('name')
-
 function get(key) {
   return new Promise((resolve, reject) => {
     client.get(key, (err, reply) => {

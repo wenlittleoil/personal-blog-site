@@ -4,7 +4,8 @@ const {
   Failure,
 } = require('../model');
 const userService = require('../service/user');
-const { sessions } = require('../util/session');
+// const { sessions } = require('../util/session');
+const db = require('../util/db');
 
 const login = async req => {
   const {
@@ -25,7 +26,8 @@ const login = async req => {
     req.session.user = {
       id: user.id,
     };
-    sessions[req.session.id] = req.session;
+    // sessions[req.session.id] = req.session;
+    db.redis.set(req.session.id, req.session);
     req.user = user;
 
     return new Success({
