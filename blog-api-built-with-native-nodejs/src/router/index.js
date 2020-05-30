@@ -37,7 +37,9 @@ const handler = (req, res) => {
 
   req.query = query;
   req.cookie = parseCookie(req);
-  mountSession(req);
+  mountSession(req).then(args => {
+    
+  });
 
   parseBody(req).then(body => {
     req.body = body;

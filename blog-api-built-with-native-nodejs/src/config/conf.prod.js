@@ -7,6 +7,10 @@ const config = {
       password: '111111',
       database: 'blog',
     },
+    redis: {
+      host: 'localhost',
+      port: 6379,
+    },
   }
 }
 

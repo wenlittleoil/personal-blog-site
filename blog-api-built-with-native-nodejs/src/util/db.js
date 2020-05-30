@@ -2,8 +2,7 @@ const {
   query,
 } = require('./mysql');
 const {
-  get,
-  set,
+  ...redis
 } = require('./redis');
 
 module.exports = {
@@ -12,7 +11,6 @@ module.exports = {
     query,
   },
   redis: {
-    get,
-    set,
+    ...redis
   }
 }
