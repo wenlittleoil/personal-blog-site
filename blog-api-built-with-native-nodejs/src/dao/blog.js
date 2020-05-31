@@ -28,8 +28,11 @@ function Dao() {
     },
     getBlogDetail: (id) => {
       const sql = `
-        select * from blog
-        where id = ?
+        select b.*, u.username 
+        from blog b
+        inner join user u
+        on b.uid = u.id
+        where b.id = ?
       `;
       return db.query(sql, [id]);
     },

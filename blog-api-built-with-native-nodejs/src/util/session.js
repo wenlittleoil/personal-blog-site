@@ -51,6 +51,7 @@ const mountSession = async req => {
   const {
     [sessionConfig.key]: sid,
   } = req.cookie;
+  console.log(req.cookie)
   const getCurrentSession = sid ? db.redis.get(sid) : Promise.resolve(null);
   return getCurrentSession.then(session => {
     if (session) {

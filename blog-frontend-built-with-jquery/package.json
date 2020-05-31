@@ -1,0 +1,17 @@
+{
+  "name": "simple-blog-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "http-server": "^0.12.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "http-server ./ -p 8002",
+    "prod": "http-server ./ -p 8002"
+  },
+  "author": "",
+  "license": "ISC"
+}

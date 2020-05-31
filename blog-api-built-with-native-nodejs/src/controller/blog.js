@@ -51,6 +51,8 @@ const createBlog = async req => {
 const updateBlog = async req => {
   const {
     id,
+  } = req.query;
+  const {
     title,
     content,
   } = req.body;

@@ -42,6 +42,16 @@ const handler = (req, res) => {
   })
   .then(body => {
     req.body = body;
+
+    /**
+     * backend server support cross domain XHR request
+     * frontend browser should set xhr.withCredentials = true 
+     * which bringing cookies back to the server
+     */
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8002');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+
     res.setHeader('Content-Type', 'application/json');
     res.setHeader(
       'Set-Cookie', 
