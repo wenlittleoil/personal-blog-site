@@ -9,8 +9,8 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "http-server ./ -p 8002",
-    "prod": "http-server ./ -p 8002"
+    "dev": "http-server ./ -p 8002 -c-1",
+    "prod": "http-server ./ -p 8002 -c60"
   },
   "author": "",
   "license": "ISC"
