@@ -14,6 +14,7 @@ function Dao() {
         inner join user as u
         on b.uid = u.id
         where 1 = 1
+        and b.status > 0
       `;
       if (uid) {
         sql += ` and b.uid = ${uid}`;

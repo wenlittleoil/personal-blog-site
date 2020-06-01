@@ -53,6 +53,7 @@ const handler = (req, res) => {
     res.setHeader('Access-Control-Allow-Credentials', 'true');
 
     res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Cache-Control', 'no-store');
     res.setHeader(
       'Set-Cookie', 
       `${sessionConfig.key}=${req.session.id}; path=/; expire=${new Date(req.session.cookie.expire).toGMTString()}`

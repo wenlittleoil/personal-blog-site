@@ -18,20 +18,40 @@
             font-size: 20px;
             font-weight: bold;
         }
+        .info-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+        }
         .info-container span,
         .info-container a {
             font-size: 14px;
             color: #999;
         }
+        .operate {
+            margin-left: 20px;
+        }
         .content-wrapper {
             margin-top: 20px;
             border-top: 1px solid #ccc;
+        }
+        .back-to-home {
+            position: absolute;
+            top: 10px;
+            right: 100px;
         }
     </style>
 </head>
 <body>
     <h1 id="title" class="title"></h1>
-    <div id="info-container" class="info-container"></div>
+    <button class="back-to-home" onclick="location.href = '/index.html'">Home</button>
+    <div class="info-container">
+        <div id="info-container"></div>
+        <div class="operate">
+            <button onclick="edit()">edit</button>
+            <button onclick="del()">delete</button>
+        </div>
+    </div>
     <div class="content-wrapper">
         <p id="content"></p>
     </div>
@@ -41,24 +61,25 @@
     <script src="https://cdn.bootcss.com/moment.js/2.23.0/locale/zh-cn.js"></script>
     <script src='./common.js'></script>
     <script>
+        const urlParams = getUrlParams()
+        let blogUsername = ''
 
-        // 显示格式化的时间
-        function getFormatDate(dt) {
-            return moment(dt).format('LL')
+        function edit() {
+            location.href = `/edit.html?id=${urlParams.id}`
         }
 
-        // 获取 url 参数
-        function getUrlParams() {
-            let paramStr = location.href.split('?')[1] || ''
-            paramStr = paramStr.split('#')[0]
-            const result = {}
-            paramStr.split('&').forEach(itemStr => {
-                const arr = itemStr.split('=')
-                const key = arr[0]
-                const val = arr[1]
-                result[key] = val
-            })
-            return result
+        function del() {
+            if (confirm('确定删除？')) {
+                const url = '/api/blog/del?id=' + urlParams.id
+                post(url).then(res => {
+                    if (res.errno !== 0) {
+                        alert('操作错误')
+                        return
+                    }
+                    alert('delete successfully!')
+                    location.replace('/blog-list.html?author=' + blogUsername)
+                })
+            }
         }
 
         // 获取 dom 元素
@@ -67,7 +88,7 @@
         const $content = $('#content')
 
         // 获取数据
-        const urlParams = getUrlParams()
+        
         const url = '/api/blog/detail?id=' + urlParams.id
         get(url).then(res => {
             if (res.errno !== 0) {
@@ -77,11 +98,12 @@
 
             // 显示数据
             const data = res.data || {}
+            blogUsername = data.username
             $title.text(data.title)
             $content.text(data.content)
             $infoContainer.append($(`
                 <span>
-                    <a href="/index.html?author=${data.username}">${data.username}</a>
+                    <a href="/blog-list.html?author=${data.username}">${data.username}</a>
                 </span>
                 <span>${getFormatDate(data.createtime)}</span>
             `))

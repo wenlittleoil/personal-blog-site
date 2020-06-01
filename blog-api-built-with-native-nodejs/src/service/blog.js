@@ -38,9 +38,7 @@ function Service() {
     
     updateBlog: async params => {
       const result = await blogDao.updateBlog(params);
-      return {
-        id: params.id,
-      }
+      return result;
     },
   }
 }

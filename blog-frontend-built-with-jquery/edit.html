@@ -43,20 +43,6 @@
     <script src='./common.js'></script>
     <script>
 
-        // 获取 url 参数
-        function getUrlParams() {
-            let paramStr = location.href.split('?')[1] || ''
-            paramStr = paramStr.split('#')[0]
-            const result = {}
-            paramStr.split('&').forEach(itemStr => {
-                const arr = itemStr.split('=')
-                const key = arr[0]
-                const val = arr[1]
-                result[key] = val
-            })
-            return result
-        }
-
         // 获取 dom 元素
         const $textTitle = $('#text-title')
         const $textContent = $('#text-content')
@@ -76,6 +62,7 @@
             $textTitle.val(data.title)
             $textContent.val(data.content)
             $btnUpdate.attr('data-id', data.id)
+
         })
 
         // 提交修改内容
@@ -96,7 +83,10 @@
                     return
                 }
                 alert('更新成功')
-                location.href = '/admin.html'
+                setTimeout(() => {
+                    history.back()
+                }, 1000)
+                
             })
         })
 

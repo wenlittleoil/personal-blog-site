@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>首页</title>
+    <title></title>
     <style type="text/css">
         body {
             margin: 0 20px;
@@ -28,10 +28,18 @@
             color: #999;
         }
 
+        .back-to-home {
+            position: absolute;
+            top: 10px;
+            right: 100px;
+        }
+
     </style>
 </head>
 <body>
-    <h1>博客首页</h1>
+    <h1 class="title"></h1>
+    <button class="back-to-home" onclick="location.href = '/index.html'">Home</button>
+    <button onclick="location.href = '/new.html'">create new blog</button>
     <div id="blog-container"></div>
 
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
@@ -46,15 +54,19 @@
         // 拼接接口 url
         let url = '/api/blog/list'
         const urlParams = getUrlParams()
+        let title = 'blog list'
         if (urlParams.author) {
-            url += '?username=' + urlParams.author
+          url += '?username=' + urlParams.author
+          title = `${urlParams.author}'s blog list`;
         }
+        document.title = title
+        document.querySelector('h1.title').innerText = title
 
         // 加载数据
         get(url).then((res) => {
             if (res.errno !== 0) {
-                alert('数据错误')
-                return
+              alert('数据错误')
+              return
             }
 
             // 遍历博客列表，并显示
@@ -67,7 +79,7 @@
                         </p>
                         <div class="info-wrapper">
                             <span>
-                                <a href="/blog-list.html?author=${item.username}">${item.username}</a>
+                                <a href="/index.html?author=${item.username}">${item.username}</a>
                             </span>
                             <span>${getFormatDate(item.createtime)}</span>
                         </div>

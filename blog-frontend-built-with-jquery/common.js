@@ -4,11 +4,11 @@ let gconfig = {};
 
 if (CURRENT_ENV === 'dev') {
   gconfig = {
-    apiHost: 'http://localhost:8000',
+    apiHost: 'http://localhost:8008',
   }
 } else {
   gconfig = {
-    apiHost: 'http://localhost:8000',
+    apiHost: 'http://localhost:8008',
   }
 }
 
@@ -46,3 +46,44 @@ function post(url, data = {}) {
       }
   })
 }
+
+// 显示格式化的时间
+function getFormatDate(dt) {
+  if (moment) {
+    return moment(dt).format('LL');
+  }
+  return '';
+}
+
+// 获取 url 参数
+function getUrlParams() {
+  let paramStr = location.href.split('?')[1] || ''
+  paramStr = paramStr.split('#')[0]
+  const result = {}
+  paramStr.split('&').forEach(itemStr => {
+      const arr = itemStr.split('=')
+      const key = arr[0]
+      const val = arr[1]
+      result[key] = val
+  })
+  return result
+}
+
+function initLoginCheck() {
+  const pathname = location.pathname;
+  if (pathname === "/login.html") return;
+  get('/api/user/info').then(res => {
+    const {
+      errno,
+      data
+    } = res;
+    const {
+      login_status,
+    } = data;
+    if (!login_status) {
+      location.replace('/login.html');
+    }
+  })
+}
+
+initLoginCheck()

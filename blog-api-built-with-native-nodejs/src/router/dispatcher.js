@@ -3,6 +3,7 @@ const {
   getBlogDetail,
   createBlog,
   updateBlog,
+  delBlog,
 } = require('../controller/blog');
 const {
   login,
@@ -31,6 +32,10 @@ const dispatcher = {
   'get /api/user/info': {
     handle: getUserInfo,
   },
+  'post /api/blog/del': {
+    auth: true,
+    handle: delBlog,
+  }
 }
 
 module.exports = dispatcher;

@@ -32,10 +32,10 @@
             post(url, data).then(res => {
                 if (res.errno === 0) {
                     // 登录成功
-                    location.href = './admin.html'
+                    location.href = '/index.html'
                 } else {
                     // 登录失败
-                    alert(res.message)
+                    alert('login fail, please check your username and password!')
                 }
             })
         })

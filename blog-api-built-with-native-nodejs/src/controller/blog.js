@@ -67,7 +67,35 @@ const updateBlog = async req => {
     content,
   }, val => !val);
   const result = await blogService.updateBlog(updateParams);
-  return new Success(result);
+  const {
+    affectedRows,
+  } = result;
+  if (affectedRows > 0) {
+    return new Success('update successfully');
+  }
+  return new Failure('update fail');
+}
+
+const delBlog = async req => {
+  const {
+    id,
+  } = req.query;
+  const {
+    id: uid,
+  } = req.user;
+  const result = await blogService.updateBlog({
+    id,
+    uid,
+    status: 0,
+  });
+  const {
+    affectedRows,
+  } = result;
+  if (affectedRows > 0) {
+    return new Success('delete successfully');
+  }
+  return new Failure('delete fail');
+  
 }
 
 module.exports = {
@@ -75,4 +103,5 @@ module.exports = {
   getBlogDetail,
   createBlog,
   updateBlog,
+  delBlog,
 }
