@@ -51,26 +51,25 @@ const mountSession = async req => {
   const {
     [sessionConfig.key]: sid,
   } = req.cookie;
-  console.log(req.cookie)
   const getCurrentSession = sid ? db.redis.get(sid) : Promise.resolve(null);
-  return getCurrentSession.then(session => {
+  return getCurrentSession.then(async session => {
     if (session) {
       const nowTime = Date.now();
       const expireTime = session.cookie.expire;
       if (nowTime > expireTime) {
         // current session already expired, delete it and regenerate
-        db.redis.del(sid);
+        await db.redis.del(sid);
         req.session = generateSession();
-        db.redis.set(req.session.id, req.session);
+        await db.redis.set(req.session.id, req.session);
       } else {
         // current session not expired, update expire time
         session.cookie.expire = nowTime + sessionConfig.EXPIRE;
-        db.redis.set(sid, session);
+        await db.redis.set(sid, session);
         req.session = session;
       }
     } else {
       req.session = generateSession();
-      db.redis.set(req.session.id, req.session);
+      await db.redis.set(req.session.id, req.session);
     }
     // compatible with non-session login methods in the future
     req.user = req.session.user;
