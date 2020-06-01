@@ -22,12 +22,14 @@ function get(key) {
   });
 }
 
-function set(key, value) {
+function set(...args) {
+  let key = args.shift();
+  let value = args.shift();
   if (typeof value === 'object') {
     value = JSON.stringify(value);
   }
   return new Promise((resolve, reject) => {
-    client.set(key, value, (err, reply) => {
+    client.set(key, value, ...args, (err, reply) => {
       if (err) {
         reject(err);
         return;
