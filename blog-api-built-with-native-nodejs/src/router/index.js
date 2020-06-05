@@ -66,6 +66,7 @@ const handler = (req, res) => {
       'Set-Cookie', 
       `${sessionConfig.key}=${req.session.id}; path=/; expire=${new Date(req.session.cookie.expire).toGMTString()}`
     );
+    res.setHeader('Server', `Node v${process.versions.node}`);
 
     const dispatcherKey = `${method.toLowerCase()} ${path}`;
     const dispatcherValue = dispatcher[dispatcherKey];
