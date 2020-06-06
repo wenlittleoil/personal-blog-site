@@ -11,6 +11,7 @@ const {
 
 const { mountSession } = require('../util/session');
 const sessionConfig = require('../config/conf').session;
+const logger = require('../util/logger');
 
 // global error handle
 let _res = null;
@@ -67,6 +68,17 @@ const handler = (req, res) => {
       `${sessionConfig.key}=${req.session.id}; path=/; expire=${new Date(req.session.cookie.expire).toGMTString()}`
     );
     res.setHeader('Server', `Node v${process.versions.node}`);
+
+    // access log
+    logger.info({
+      cat: 'access',
+      name: 'req_start',
+      data: {
+        method,
+        url,
+        ua: req.headers['user-agent'],
+      }
+    });
 
     const dispatcherKey = `${method.toLowerCase()} ${path}`;
     const dispatcherValue = dispatcher[dispatcherKey];

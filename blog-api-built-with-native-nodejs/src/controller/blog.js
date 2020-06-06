@@ -5,6 +5,9 @@ const {
   Failure,
 } = require('../model');
 const blogService = require('../service/blog');
+const logger = require('../util/logger');
+
+const BLOG_CAT = 'blog';
 
 const getBlogList = req => {
   const {
@@ -39,12 +42,24 @@ const createBlog = async req => {
     content,
   } = req.body;
   const { id: uid } = req.user;
+  logger.warn({
+    cat: BLOG_CAT,
+    name: 'create_blog',
+    desc: 'someone is creating blog',
+    data: {
+      uid,
+      title,
+      content,
+    }
+  });
   assert(uid && title && content, 'missing parameters uid/title/content');
+
   const result = await blogService.createBlog({
     uid,
     title,
     content,
   });
+  
   return new Success(result);
 }
 

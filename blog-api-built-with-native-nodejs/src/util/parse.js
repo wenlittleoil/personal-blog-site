@@ -60,6 +60,15 @@ const parseCookie = req => {
   return cookie;
 }
 
+/**
+ * use readline to parse logs
+ * @param {string} logfile
+ * @return {Array}
+ */
+const parseLog = logfile => {
+
+}
+
 module.exports = {
   parseBody,
   parseCookie,
