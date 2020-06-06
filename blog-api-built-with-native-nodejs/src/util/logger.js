@@ -19,30 +19,12 @@ const {
   promisify,
 } = require('util');
 const moment = require('moment');
+const {
+  isExists,
+  mkdir,
+} = require('./tool');
 
 const logBaseDir = path.resolve(__dirname, `../../logs`);
-const isExists = file => {
-  return new Promise(resolve => {
-    fs.access(file, err => {
-      if (err) {
-        resolve(false);
-        return;
-      }
-      resolve(true);
-    });
-  });
-}
-const mkdir = dir => {
-  return new Promise((resolve, reject) => {
-    fs.mkdir(dir, { recursive: true }, err => {
-      if (err) {
-        resolve(false);
-        return;
-      }
-      resolve(true);
-    });
-  });
-}
 
 const decorate = fn => args => {
   if (typeof args !== 'object') return;

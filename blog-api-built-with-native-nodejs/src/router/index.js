@@ -1,8 +1,10 @@
 const assert = require('assert');
 const querystring = require('querystring');
+const path = require('path');
 const {
   parseCookie,
   parseBody,
+  parseLog,
 } = require('../util/parse');
 const dispatcher = require('./dispatcher');
 const {
@@ -12,6 +14,14 @@ const {
 const { mountSession } = require('../util/session');
 const sessionConfig = require('../config/conf').session;
 const logger = require('../util/logger');
+
+// unuse code! test for parsing log function
+// parseLog(path.resolve(__dirname, '../../logs/blog/2020-06-06.log'))
+// .then(list => {
+//   console.log(list);
+// }).catch(err => {
+//   console.log(err);
+// });
 
 // global error handle
 let _res = null;

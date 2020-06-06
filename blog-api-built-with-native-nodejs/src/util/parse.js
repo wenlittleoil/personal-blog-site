@@ -1,3 +1,9 @@
+const readline = require('readline');
+const fs = require('fs');
+const {
+  isExists,
+} = require('./tool');
+
 /**
  * parse http request body
  * @param {IncomingMessage} req 
@@ -65,11 +71,34 @@ const parseCookie = req => {
  * @param {string} logfile
  * @return {Array}
  */
-const parseLog = logfile => {
-
+const parseLog = async logfile => {
+  const exist = await isExists(logfile);
+  if (!exist) return Promise.reject(new Error(`${logfile} doesn't exists!`));
+  const src = fs.createReadStream(logfile);
+  const rl = readline.createInterface({
+    input: src,
+  });
+  const list = [];
+  return new Promise((resolve, reject) => {
+    rl.on('line', lineText => {
+      if (lineText) {
+        const arr = lineText.split('--');
+        const lineCont = JSON.parse(arr[1]);
+        Object.assign(lineCont, {
+          level: arr[0].replace(/\[|\]/g, ''),
+          time: arr[2].replace(/\[|\]/g, ''),
+        });
+        list.push(lineCont);
+      }
+    });
+    rl.on('close', () => {
+      resolve(list);
+    });
+  });
 }
 
 module.exports = {
   parseBody,
   parseCookie,
+  parseLog,
 }
