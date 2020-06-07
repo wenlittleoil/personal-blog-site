@@ -1,5 +1,8 @@
 const sessionConfig = require('../config/conf').session;
 const db = require('../util/db');
+const {
+  genSafetySessionid,
+} = require('../util/security');
 
 // global sessions center
 // const sessions = {};
@@ -7,7 +10,7 @@ const db = require('../util/db');
 // generate new session object
 const generateSession = () => {
   const now = Date.now();
-  const id = `${now}${Math.random()}`;
+  const id = genSafetySessionid(`${now}${Math.random()}`);
   const session = {
     id,
     cookie: {
