@@ -6,6 +6,9 @@ const {
 const userService = require('../service/user');
 // const { sessions } = require('../util/session');
 const db = require('../util/db');
+const {
+  genSaltedPassword,
+} = require('../util/security');
 
 const login = async req => {
   const {
@@ -15,7 +18,7 @@ const login = async req => {
   assert(username && password, 'missing parameter username/password');
   const result = await userService.login({
     username,
-    password,
+    password: genSaltedPassword(password),
   });
 
   if (result.length) {
