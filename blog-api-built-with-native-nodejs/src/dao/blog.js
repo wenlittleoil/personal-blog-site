@@ -2,6 +2,8 @@ const db = require('../util/db');
 const xss = require('xss');
 
 function Dao() {
+  const connection = db.mysql.connection;
+  const escape = connection.escape.bind(connection);
 
   return {
     getBlogList: ({
@@ -18,12 +20,15 @@ function Dao() {
         and b.status > 0
       `;
       if (uid) {
+        uid = escape(uid);
         sql += ` and b.uid = ${uid}`;
       }
       if (username) {
-        sql += ` and u.username = '${username}'`;
+        username = escape(username);
+        sql += ` and u.username = ${username}`;
       }
       if (keyword) {
+        keyword = escape(keyword);
         sql += ` and b.title like '%${keyword}%'`;
       }
       return db.query(sql);
@@ -60,16 +65,20 @@ function Dao() {
       id,
       ...obj
     }) => {
+      id = db.mysql.connection.escape(id);
+
       const str = 
         Object.keys(obj).map(field => {
           return `${field}=${JSON.stringify(xss(obj[field]))}`;
         }).join(',');
+
       const sql = `
         update blog set
         ${str}
         where id = ${id}
         and uid = ${uid}
       `;
+
       return db.query(sql);
     },
   };

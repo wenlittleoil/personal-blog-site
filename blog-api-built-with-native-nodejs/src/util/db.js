@@ -1,5 +1,6 @@
 const {
   query,
+  connection,
 } = require('./mysql');
 const {
   ...redis
@@ -9,6 +10,7 @@ module.exports = {
   query,
   mysql: {
     query,
+    connection,
   },
   redis: {
     ...redis
