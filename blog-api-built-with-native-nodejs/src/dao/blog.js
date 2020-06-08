@@ -1,4 +1,5 @@
 const db = require('../util/db');
+const xss = require('xss');
 
 function Dao() {
 
@@ -42,6 +43,10 @@ function Dao() {
       title,
       content,
     }) => {
+      // prevent xss attack
+      title = xss(title);
+      content = xss(content);
+
       const sql = `
         insert into blog
         (title, content, uid)
@@ -56,7 +61,9 @@ function Dao() {
       ...obj
     }) => {
       const str = 
-        Object.keys(obj).map(field => `${field}='${obj[field]}'`).join(',');
+        Object.keys(obj).map(field => {
+          return `${field}=${JSON.stringify(xss(obj[field]))}`;
+        }).join(',');
       const sql = `
         update blog set
         ${str}

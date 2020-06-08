@@ -100,7 +100,10 @@
             const data = res.data || {}
             blogUsername = data.username
             $title.text(data.title)
-            $content.text(data.content)
+
+            // $content.text(data.content) // security
+            $content.html(data.content) // xss actack
+
             $infoContainer.append($(`
                 <span>
                     <a href="/blog-list.html?author=${data.username}">${data.username}</a>
