@@ -24,7 +24,7 @@ const genSaltedPassword = (rawPassword) => {
 const genSafetySessionid = rawSessionid => {
   const { sessionSecret } = config;
   const hash = crypto.createHmac('sha256', sessionSecret);
-  const safetySessionid = 
+  const safetySessionid = 'sess:' +
     hash.update(rawSessionid).digest('base64').replace(/\=+$/g, '');
   return safetySessionid;
 }

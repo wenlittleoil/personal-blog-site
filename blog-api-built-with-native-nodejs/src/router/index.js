@@ -75,7 +75,7 @@ const handler = (req, res) => {
     res.setHeader('Cache-Control', 'no-store');
     res.setHeader(
       'Set-Cookie', 
-      `${sessionConfig.key}=${req.session.id}; path=/; expire=${new Date(req.session.cookie.expire).toGMTString()}`
+      `${sessionConfig.key}=${req.session.id}; Path=/; Expires=${new Date(req.session.cookie.expire).toGMTString()}; HttpOnly`
     );
     res.setHeader('Server', `Node v${process.versions.node}`);
 
