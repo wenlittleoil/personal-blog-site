@@ -1,0 +1,21 @@
+h1 {
+  color: red;
+  font-size: 30px;
+  text-align: center;
+}
+
+.content {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
+
+.content p {
+  font-size: 20px;
+  color: blue;
+}
+
+.content p span {
+  font-style: italic;
+  color: black;
+}
