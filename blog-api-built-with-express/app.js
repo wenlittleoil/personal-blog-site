@@ -8,22 +8,24 @@ const apiRouter = require('./src/routes');
 const app = express();
 const port = 8008;
 
-app.use('/', (req, res, next) => {
-  next();
-});
-
+// parse request body
 // deprecated
 // app.use(express.json());
 // app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+// parse request cookie
 app.use(cookieParser());
+
+// mount session
 app.use(session({
+  name: config.session.key,
   secret: config.session.secret,
   cookie: {
     path: '/',
     maxAge: config.session.EXPIRE,
+    httpOnly: true,
   },
   resave: false,
   saveUninitialized: true,
@@ -37,19 +39,24 @@ app.use(session({
   next();
 });
 
+// static resource service
 // app.use('/static', ex11press.static('./src/public'));
 app.use('/static', express.static(path.resolve(__dirname, 'src/public')));
+
+// api service
 app.use('/api', (req, res, next) => {
   console.log(req.cookies, req.sessionID, req.session);
   next();
 }, apiRouter);
 
+// request router error
 app.use((req, res, next) => {
   res.status(404).send('Not Found');
 });
+
+// error handle
 app.use((err, req, res, next) => {
   if (err) {
-    console.log('accept four parameters will be error handle middleware by default');
     res.status(500).send('Server Side Error');
   } else {
     next();
