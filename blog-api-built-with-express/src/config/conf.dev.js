@@ -11,7 +11,11 @@ const config = {
       host: 'localhost',
       port: 6379,
     },
-  }
+  },
+  whitelist: [
+    'localhost',
+    '127.0.0.1',
+  ],
 }
 
 module.exports = config;

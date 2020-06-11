@@ -4,8 +4,8 @@ let gconfig = {};
 
 if (CURRENT_ENV === 'dev') {
   gconfig = {
-    // apiHost: 'http://localhost:8008', // cross domain XHR request (through CORS Mechanism)
-    apiHost: window.location.origin, // same domain XHR request (through Nginx Proxy)
+    apiHost: 'http://localhost:8008', // cross domain XHR request (through CORS Mechanism)
+    // apiHost: window.location.origin, // same domain XHR request (through Nginx Proxy)
   }
 } else {
   gconfig = {

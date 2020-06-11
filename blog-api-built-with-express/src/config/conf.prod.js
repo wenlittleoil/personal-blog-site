@@ -11,7 +11,8 @@ const config = {
       host: 'localhost',
       port: 6379,
     },
-  }
+  },
+  whitelist: [],
 }
 
 module.exports = config;
