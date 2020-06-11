@@ -47,4 +47,5 @@ module.exports = {
   get,
   set,
   del,
+  client,
 }

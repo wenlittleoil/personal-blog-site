@@ -3,6 +3,12 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const connectRedis = require('connect-redis');
+
+const RedisStore = connectRedis(session);
+const {
+  client: redisClient,
+} = require('./src/util/redis');
 const config = require('./src/config/conf');
 const apiRouter = require('./src/routes');
 const app = express();
@@ -24,12 +30,18 @@ app.use(session({
   secret: config.session.secret,
   cookie: {
     path: '/',
+    // redis will auto delete it after exipre time
     maxAge: config.session.EXPIRE,
     httpOnly: true,
   },
   resave: false,
   saveUninitialized: true,
+  // sessions stored on the redis instance
+  store: new RedisStore({
+    client: redisClient,
+  }),
 }), (req, res, next) => {
+  // update req.user
   const user = req.session.user;
   if (user) {
     req.user = user;
