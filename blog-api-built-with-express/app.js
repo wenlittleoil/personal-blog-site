@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const connectRedis = require('connect-redis');
 const cors = require('cors');
+const compression = require('compression');
 
 const RedisStore = connectRedis(session);
 const {
@@ -14,6 +15,19 @@ const config = require('./src/config/conf');
 const apiRouter = require('./src/routes');
 const app = express();
 const port = 8008;
+
+// Content-Encoding: gzip
+app.use(compression({
+  threshold: 1000,
+  level: 9,
+  filter: () => true,
+  chunkSize: 300,
+}));
+
+// static resource service, for example, 
+// open your browser and type url 'http://localhost:{port}/static/index.html'
+// app.use('/static', ex11press.static('./src/public'));
+app.use('/static', express.static(path.resolve(__dirname, 'src/public')));
 
 // access control
 app.use(cors(function(req, callback) {
@@ -75,10 +89,6 @@ app.use(session({
   }
   next();
 });
-
-// static resource service
-// app.use('/static', ex11press.static('./src/public'));
-app.use('/static', express.static(path.resolve(__dirname, 'src/public')));
 
 // api service
 app.use('/api', (req, res, next) => {
