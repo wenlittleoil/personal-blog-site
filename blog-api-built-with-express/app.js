@@ -6,6 +6,7 @@ const session = require('express-session');
 const connectRedis = require('connect-redis');
 const cors = require('cors');
 const compression = require('compression');
+const csurf = require('csurf');
 
 const RedisStore = connectRedis(session);
 const {
@@ -15,6 +16,7 @@ const config = require('./src/config/conf');
 const apiRouter = require('./src/routes');
 const { accessLog } = require('./src/util/logger2');
 const assignId = require('./src/middleware/assignId');
+const bodyLimit = require('./src/middleware/bodyLimit');
 
 const app = express();
 const port = 8008;
@@ -28,7 +30,7 @@ app.use(compression({
 }));
 
 // access log
-app.use('/api', assignId, accessLog());
+app.use('/api', bodyLimit(), assignId, accessLog());
 
 // static resource service, for example, 
 // open your browser and type url 'http://localhost:{port}/static/index.html'
@@ -42,7 +44,8 @@ app.use(cors(function(req, callback) {
     whitelist,
   } = config;
   const currentOrigin = req.headers['origin'];
-  const canAccess = whitelist.find(origin => {
+  // compatible with non-browser environment's request
+  const canAccess = !currentOrigin || whitelist.find(origin => {
     return currentOrigin.indexOf(origin) > -1;
   });
   let corsOptions = {};
@@ -111,6 +114,7 @@ app.use((req, res, next) => {
 // error handle
 app.use((error, request, response, next) => {
   if (error) {
+    console.log(error)
     response.status(500).send('Server Side Error');
   } else {
     next();
