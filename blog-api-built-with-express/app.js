@@ -13,6 +13,9 @@ const {
 } = require('./src/util/redis');
 const config = require('./src/config/conf');
 const apiRouter = require('./src/routes');
+const { accessLog } = require('./src/util/logger2');
+const assignId = require('./src/middleware/assignId');
+
 const app = express();
 const port = 8008;
 
@@ -23,6 +26,9 @@ app.use(compression({
   filter: () => true,
   chunkSize: 300,
 }));
+
+// access log
+app.use('/api', assignId, accessLog());
 
 // static resource service, for example, 
 // open your browser and type url 'http://localhost:{port}/static/index.html'
@@ -92,7 +98,7 @@ app.use(session({
 
 // api service
 app.use('/api', (req, res, next) => {
-  console.log(req.cookies, req.sessionID, req.session);
+  // console.log(req.cookies, req.sessionID, req.session);
   res.setHeader('Cache-Control', 'no-store');
   next();
 }, apiRouter);
@@ -103,9 +109,9 @@ app.use((req, res, next) => {
 });
 
 // error handle
-app.use((err, req, res, next) => {
-  if (err) {
-    res.status(500).send('Server Side Error');
+app.use((error, request, response, next) => {
+  if (error) {
+    response.status(500).send('Server Side Error');
   } else {
     next();
   }
