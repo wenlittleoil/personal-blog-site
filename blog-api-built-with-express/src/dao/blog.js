@@ -50,7 +50,7 @@ function Dao() {
     }) => {
       // prevent xss attack
       title = xss(title);
-      content = xss(content);
+      content = `${JSON.stringify(xss(content))}`;
 
       const sql = `
         insert into blog
@@ -69,7 +69,7 @@ function Dao() {
 
       const str = 
         Object.keys(obj).map(field => {
-          return `${field}=${JSON.stringify(xss(obj[field]))}`;
+          return `${field}=${xss(JSON.stringify(obj[field]))}`;
         }).join(',');
 
       const sql = `

@@ -13,7 +13,13 @@ module.exports = (options = {}) => {
     bytesLimit,
     exceptTypes,
   } = useOptions;
+  
   return (req, res, next) => {
+    if (req.method !== 'POST') {
+      next();
+      return;
+    }
+
     const contentType= req.headers['content-type'];
     if (exceptTypes.includes(contentType)) {
       next();

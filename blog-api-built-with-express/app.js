@@ -30,7 +30,11 @@ app.use(compression({
 }));
 
 // access log
-app.use('/api', bodyLimit(), assignId, accessLog());
+app.use(
+  '/api', 
+  assignId, 
+  accessLog()
+);
 
 // static resource service, for example, 
 // open your browser and type url 'http://localhost:{port}/static/index.html'
@@ -61,6 +65,13 @@ app.use(cors(function(req, callback) {
   }
   callback(null, corsOptions);
 }));
+
+app.use(
+  '/api',
+  bodyLimit({
+    bytesLimit: 1000,
+  }), 
+);
 
 // parse request body
 // deprecated
