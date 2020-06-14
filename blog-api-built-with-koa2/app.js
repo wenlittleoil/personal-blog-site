@@ -7,6 +7,7 @@ const bodyparser = require('koa-bodyparser')
 // const logger = require('koa-logger')
 const session = require('koa-generic-session')
 const redisStore = require('koa-redis')
+const cors = require('@koa/cors');
 const config = require('./config/conf')
 const index = require('./routes/index')
 
@@ -54,10 +55,29 @@ app.use(session({
   }),
 }))
 app.use(async (ctx, next) => {
-  console.log(ctx.sessionId, ctx.session)
+  // console.log(ctx.sessionId, ctx.session)
+  console.log(ctx.header, ctx.headers)
   ctx.user = ctx.session.user
+  ctx.set('Cache-Control', 'no-store')
   await next()
 })
+
+// cors support
+app.use(cors({
+  origin: ctx => {
+    const {
+      whitelist,
+    } = config;
+    const currentOrigin = ctx.headers['origin'];
+    // compatible with non-browser environment's request
+    const canAccess = !currentOrigin || whitelist.find(origin => {
+      return currentOrigin.indexOf(origin) > -1;
+    });
+    if (canAccess) return currentOrigin;
+    return '';
+  },
+  credentials: true,
+}))
 
 // routes
 app.use(index.routes(), index.allowedMethods())
