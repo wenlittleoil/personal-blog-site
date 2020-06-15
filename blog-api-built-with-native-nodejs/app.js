@@ -6,5 +6,7 @@ const port = 8008;
 const server = http.createServer(handler);
 
 server.listen(port, () => {
-  console.log(`server is listening at port ${port}`)
+  console.log(`server is listening at port ${port}`);
+  console.log(process.env.author);
+  console.log(process.env.INSTANCE_ID);
 });

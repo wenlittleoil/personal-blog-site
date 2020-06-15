@@ -35,7 +35,17 @@ const dispatcher = {
   'post /api/blog/del': {
     auth: true,
     handle: delBlog,
-  }
+  },
+
+  'get /api/test/error': {
+    handle: async () => {
+      throw new Error('something broken!');
+      return {
+        info: 'test-error',
+      }
+    },
+  },
+
 }
 
 module.exports = dispatcher;
