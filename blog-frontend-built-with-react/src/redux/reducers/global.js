@@ -6,14 +6,10 @@ const initialState = {
 
 export default global = (state = initialState, action) => {
   switch(action.type) {
-    case 'SET_INITING':
-      return {
-        ...state,
-        initing: false,
-      };
     case 'SET_USER': {
       return {
         ...state,
+        initing: false,
         logined: action.logined,
         user: action.user,
       }

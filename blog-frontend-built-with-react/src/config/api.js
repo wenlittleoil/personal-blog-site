@@ -12,7 +12,7 @@ const apiPath = {
 }
 
 const api = Object.keys(apiPath).reduce((prev, cur) => {
-  prev[cur] = `${apiHost}${apiPath}`;
+  prev[cur] = `${apiHost}${apiPath[cur]}`;
   return prev;
 }, {});
 

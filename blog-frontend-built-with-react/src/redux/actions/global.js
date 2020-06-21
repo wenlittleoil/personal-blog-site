@@ -1,20 +1,21 @@
-export const setIniting = () => {
-  return {
-    type: 'SET_INITING',
-  }
-}
 
 export const setUser = user => {
-  if (user) {
-    return {
-      type: 'SET_USER',
-      logined: true,
-      user,
+  return async (dispatch, getState, { request, api, }) => {
+    const { data } = await request.get({
+      url: api.userInfoApi,
+    });
+    if (data.login_status) {
+      dispatch({
+        type: 'SET_USER',
+        logined: true,
+        user: data.user,
+      });
+    } else {
+      dispatch({
+        type: 'SET_USER',
+        logined: false,
+        user: null,
+      });
     }
   }
-  return {
-    type: 'SET_USER',
-    logined: false,
-    user: null,
-  } 
 }
