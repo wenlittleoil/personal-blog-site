@@ -3,8 +3,38 @@ const {
   promisify,
 } = require('util');
 const config = require('../config/conf');
+const env = process.env.NODE_ENV;
 
 const client = redis.createClient(config.db.redis);
+
+client.on('reconnecting', options => {
+  if (env === 'dev') {
+    if (options.attempt > 5) {
+      /**
+       * redis client will reconnect to redis server automatically,
+       * but if retry attempt failure reach 5 times,
+       * quit the reconnection.
+       */
+      client.quit();
+    }
+  }
+});
+
+client.on("error", function(error) {
+  const {
+    code,
+    address,
+    port,
+  } = error;
+  if (env === 'dev') {
+    if (code === 'ECONNREFUSED') {
+      const msg = `Error! cannot connect to redis server ${address}:${port}`;
+      console.error(msg);
+    }
+  } else {
+    throw error;
+  }
+});
 
 function get(key) {
   return new Promise((resolve, reject) => {

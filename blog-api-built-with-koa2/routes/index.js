@@ -17,10 +17,15 @@ const router = new Router({
   prefix: '/api',
 });
 
-router.get('/', async (ctx, next) => {
+// test
+router.get('/test-session', async (ctx, next) => {
   ctx.body = 'test session';
   let counts = ctx.session.viewcounts || 0;
   ctx.session.viewcounts = ++counts;
+  await next();
+});
+router.get('/test-no-db', async (ctx, next) => {
+  ctx.body = 'test no db';
   await next();
 });
 

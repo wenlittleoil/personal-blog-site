@@ -10,6 +10,11 @@ const config = {
     redis: {
       host: 'localhost',
       port: 6379,
+      // disable_resubscribing: true,
+      // retry_strategy: options => {
+      //   // End reconnecting with built in error
+      //   return 5000;
+      // },
     },
   },
   whitelist: [
