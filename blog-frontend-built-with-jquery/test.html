@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test</title>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+  <script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+  <script src="https://cdn.bootcss.com/moment.js/2.23.0/locale/zh-cn.js"></script>
+  <script src='./common.js'></script>
+</head>
+<body>
+  <script>
+    get('/api/test/need-basic-auth').then(res => {
+      console.log(res);
+      $('#root').text(res);
+    }).catch(err => {
+      console.log(err);
+      $('#root').text(err);
+    });
+  </script>
+  <div id="root">
+
+  </div>
+</body>
+</html>

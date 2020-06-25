@@ -72,8 +72,6 @@ function getUrlParams() {
 }
 
 function initLoginCheck() {
-  const pathname = location.pathname;
-  if (pathname === "/login.html") return;
   get('/api/user/info').then(res => {
     const {
       errno,
@@ -87,5 +85,3 @@ function initLoginCheck() {
     }
   })
 }
-
-initLoginCheck()

@@ -9,7 +9,10 @@ const register = (method, path, loginfilter, controller) => {
     loginfilter = (req, res, next) => next();
   }
   router[method](path, loginfilter, (req, res, next) => {
-    controller(req).then(result => {
+    const result = controller(req, res);
+    const promiseResult = 
+      result instanceof Promise ? result : Promise.resolve(result);
+    promiseResult.then(result => {
       res.json(result);
     });
   });
@@ -26,13 +29,21 @@ const {
   login,
   getUserInfo,
 } = require('../controller/user');
+const {
+  testNeedBasicAuth,
+} = require('../controller/test');
 
+// test
+register('get', '/test/need-basic-auth', testNeedBasicAuth);
+
+// blog
 register('get', '/blog/list', getBlogList);
 register('get', '/blog/detail', getBlogDetail);
 register('post', '/blog/create', loginfilter, createBlog);
 register('post', '/blog/update', loginfilter, updateBlog);
 register('post', '/blog/del', loginfilter, delBlog);
 
+// user
 register('post', '/user/login', login);
 register('get', '/user/info', getUserInfo);
 
