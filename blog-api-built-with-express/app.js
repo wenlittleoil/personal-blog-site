@@ -17,6 +17,7 @@ const apiRouter = require('./src/routes');
 const { accessLog } = require('./src/util/logger2');
 const assignId = require('./src/middleware/assignId');
 const bodyLimit = require('./src/middleware/bodyLimit');
+const verifyToken = require('./src/middleware/verifyToken');
 
 const app = express();
 const port = 8008;
@@ -109,6 +110,9 @@ app.use(session({
   }
   next();
 });
+
+// token verify and auth
+app.use(verifyToken());
 
 // api service
 app.use('/api', (req, res, next) => {

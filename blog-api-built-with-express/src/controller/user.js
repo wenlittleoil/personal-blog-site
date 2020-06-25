@@ -9,7 +9,9 @@ const db = require('../util/db');
 const {
   genSaltedPassword,
 } = require('../util/security');
+const jwt = require('../util/jwt');
 
+// login throught session
 const login = async req => {
   const {
     username,
@@ -46,6 +48,47 @@ const login = async req => {
   }
 }
 
+// login throught token
+const login2 = async req => {
+  const {
+    username,
+    password,
+  } = req.body;
+  assert(username && password, 'missing parameter username/password');
+  const result = await userService.login({
+    username,
+    password: genSaltedPassword(password),
+  });
+  if (result.length) {
+    // login successfully
+    const user = result[0];
+
+    // issue token to user but no need to store auth info in server side
+    const token = await jwt.sign({
+      uid: user.id,
+    });
+    req.jwt = {
+      error: null,
+      token,
+    }
+    req.user = user;
+
+    return new Success({
+      login_status: 1,
+      login_info: 'logined',
+      user,
+      token, // return token to the client
+    });
+  } else {
+    // login fail
+    return new Failure({
+      login_status: 0,
+      login_info: 'unlogin',
+      user: null,
+    });
+  }
+}
+
 const getUserInfo = async req => {
   if (req.user) {
     const {
@@ -67,5 +110,6 @@ const getUserInfo = async req => {
 
 module.exports = {
   login,
+  login2,
   getUserInfo,
 }

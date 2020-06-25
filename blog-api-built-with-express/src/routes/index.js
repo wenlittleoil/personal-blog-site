@@ -27,6 +27,7 @@ const {
 } = require('../controller/blog');
 const {
   login,
+  login2,
   getUserInfo,
 } = require('../controller/user');
 const {
@@ -45,6 +46,7 @@ register('post', '/blog/del', loginfilter, delBlog);
 
 // user
 register('post', '/user/login', login);
+register('post', '/user/login2', login2);
 register('get', '/user/info', getUserInfo);
 
 module.exports = router;

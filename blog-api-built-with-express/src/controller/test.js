@@ -1,6 +1,7 @@
 exports.testNeedBasicAuth = (req, res) => {
 
   const authFailHandle = (req, res) => {
+    // tell the client to send Basic Authorization Info in the request headers;
     res.setHeader(
       'WWW-Authenticate', 
       'Basic realm="please enter your username and password!"'
