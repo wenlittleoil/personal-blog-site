@@ -20,6 +20,18 @@ const parseBody = req => {
       return;
     }
     const contentType = headers['content-type'];
+
+    const immediateParseTypes = 
+      ['application/json', 'application/x-www-form-urlencoded'];
+    if (!immediateParseTypes.includes(contentType)) {
+      /**
+       * unsupport parse other content-type, 
+       * such as multipart/form-data, application/xml etc.
+       */
+      resolve({});
+      return;
+    }
+
     let body = '';
     req.on('data', chunk => {
       body += chunk.toString();
@@ -37,12 +49,6 @@ const parseBody = req => {
           return prev;
         }, {});
         resolve(obj);
-      } else {
-        /**
-         * unsupport parse other content-type, 
-         * such as multipart/form-data, application/xml etc.
-         */
-        resolve({});
       }
     });
   });

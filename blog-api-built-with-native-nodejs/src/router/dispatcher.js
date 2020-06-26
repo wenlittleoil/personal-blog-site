@@ -9,8 +9,13 @@ const {
   login,
   getUserInfo,
 } = require('../controller/user');
+const {
+  uploadText,
+  uploadImg,
+} = require('../controller/test');
 
 const dispatcher = {
+  // blog
   'get /api/blog/list': {
     handle: getBlogList,
   },
@@ -25,18 +30,20 @@ const dispatcher = {
     auth: true,
     handle: updateBlog,
   },
+  'post /api/blog/del': {
+    auth: true,
+    handle: delBlog,
+  },
   
+  // user
   'post /api/user/login': {
     handle: login,
   },
   'get /api/user/info': {
     handle: getUserInfo,
   },
-  'post /api/blog/del': {
-    auth: true,
-    handle: delBlog,
-  },
 
+  // test
   'get /api/test/error': {
     handle: async () => {
       throw new Error('something broken!');
@@ -44,6 +51,12 @@ const dispatcher = {
         info: 'test-error',
       }
     },
+  },
+  'post /api/test/upload-file/text': {
+    handle: uploadText,
+  },
+  'post /api/test/upload-file/img': {
+    handle: uploadImg,
   },
 
 }
