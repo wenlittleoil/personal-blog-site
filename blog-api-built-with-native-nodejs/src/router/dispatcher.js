@@ -11,7 +11,7 @@ const {
 } = require('../controller/user');
 const {
   uploadText,
-  uploadImg,
+  uploadFile,
 } = require('../controller/test');
 
 const dispatcher = {
@@ -55,8 +55,8 @@ const dispatcher = {
   'post /api/test/upload-file/text': {
     handle: uploadText,
   },
-  'post /api/test/upload-file/img': {
-    handle: uploadImg,
+  'post /api/test/upload-file': {
+    handle: uploadFile,
   },
 
 }

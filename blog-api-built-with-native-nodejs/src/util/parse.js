@@ -1,5 +1,7 @@
 const readline = require('readline');
 const fs = require('fs');
+const path = require('path');
+const formidable = require('formidable');
 const {
   isExists,
 } = require('./tool');
@@ -19,19 +21,49 @@ const parseBody = req => {
       resolve(null);
       return;
     }
-    const contentType = headers['content-type'];
 
-    const immediateParseTypes = 
-      ['application/json', 'application/x-www-form-urlencoded'];
-    if (!immediateParseTypes.includes(contentType)) {
+    // if multipart/form-data, like this 'content-type: multipart/form-data; boundary=----809287489'
+    let contentType = headers['content-type'];
+    contentType = contentType.indexOf('multipart/form-data') > -1 ? 
+      'multipart/form-data' : contentType;
+
+    const supportTypes = [
+      'application/json', 
+      'application/x-www-form-urlencoded',
+      'multipart/form-data',
+    ];
+    if (!supportTypes.includes(contentType)) {
       /**
        * unsupport parse other content-type, 
-       * such as multipart/form-data, application/xml etc.
+       * such as application/xml etc.
        */
       resolve({});
       return;
     }
 
+    // parse multipart/form-data
+    if (contentType === 'multipart/form-data') {
+      const form = formidable({
+        multiples: true, // contain arrays of files for inputs which submit multiple files using the HTML5 multiple attribute
+        uploadDir: path.resolve(__dirname, '../../files'), // the directory for placing file uploads in, default os.tmpdir()
+        maxFileSize: 200 * 1024 * 1024, // limit the size of the upload files, unit bytes
+        maxFields: 20, // limit the number of fields
+      });
+      form.parse(req, (err, fields, files) => {
+        if (err) {
+          reject(err);
+          return;
+        }
+        req.multFormDataBody = {
+          fields,
+          files,
+        };
+        resolve({});
+      });
+      return;
+    }
+
+    // parse application/json or application/x-www-form-urlencoded
     let body = '';
     req.on('data', chunk => {
       body += chunk.toString();
