@@ -12,6 +12,7 @@ const {
 const {
   uploadText,
   uploadFile,
+  parseXml,
 } = require('../controller/test');
 
 const dispatcher = {
@@ -57,6 +58,9 @@ const dispatcher = {
   },
   'post /api/test/upload-file': {
     handle: uploadFile,
+  },
+  'post /api/test/parse-xml': {
+    handle: parseXml,
   },
 
 }

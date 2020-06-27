@@ -51,3 +51,11 @@ exports.uploadFile = async req => {
   }
   return 'upload file fail';
 }
+
+exports.parseXml = async req => {
+  if (req.body) {
+    console.log('parse xml to js object: ', req.body);
+    return 'success';
+  }
+  return 'fail';
+}

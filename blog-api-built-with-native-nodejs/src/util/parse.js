@@ -2,6 +2,7 @@ const readline = require('readline');
 const fs = require('fs');
 const path = require('path');
 const formidable = require('formidable');
+const xml2js = require('xml2js');
 const {
   isExists,
 } = require('./tool');
@@ -31,11 +32,12 @@ const parseBody = req => {
       'application/json', 
       'application/x-www-form-urlencoded',
       'multipart/form-data',
+      'application/xml',
     ];
     if (!supportTypes.includes(contentType)) {
       /**
        * unsupport parse other content-type, 
-       * such as application/xml etc.
+       * such as `text/html` or binary etc.
        */
       resolve({});
       return;
@@ -63,7 +65,9 @@ const parseBody = req => {
       return;
     }
 
-    // parse application/json or application/x-www-form-urlencoded
+    // parse application/json, 
+    // application/x-www-form-urlencoded, 
+    // or application/xml
     let body = '';
     req.on('data', chunk => {
       body += chunk.toString();
@@ -81,6 +85,14 @@ const parseBody = req => {
           return prev;
         }, {});
         resolve(obj);
+      } else if (contentType === 'application/xml') {
+        xml2js.parseString(body, function (err, result) {
+          if (err) {
+            reject(err);
+            return;
+          }
+          resolve(result);
+        });
       }
     });
   });
