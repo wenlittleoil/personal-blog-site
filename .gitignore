@@ -1,3 +1,6 @@
 node_modules/
 
 blog-api-built-with-native-nodejs/logs/access
+
+blog-api-built-with-egg/logs
+blog-api-built-with-egg/run

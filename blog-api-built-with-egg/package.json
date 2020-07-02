@@ -1,0 +1,19 @@
+{
+  "name": "blog-api-built-with-egg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "egg-bin dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "egg": "^2.27.0"
+  },
+  "devDependencies": {
+    "egg-bin": "^4.14.1"
+  }
+}

@@ -1,0 +1,6 @@
+2020-07-02 23:41:47,004 INFO 6915 [Timer] /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 17293001ms at 2020-07-03 04:30:00.005
+2020-07-02 23:41:47,005 INFO 6915 [Timer] /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 1092996ms at 2020-07-03 00:00:00.001
+2020-07-02 23:41:47,005 INFO 6915 [Timer] /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 1093995ms at 2020-07-03 00:00:01.000
+2020-07-02 23:41:46,875 INFO 6926 [egg-schedule]: register schedule /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2020-07-02 23:41:46,875 INFO 6926 [egg-schedule]: register schedule /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-logrotator/app/schedule/clean_log.js
+2020-07-02 23:41:46,875 INFO 6926 [egg-schedule]: register schedule /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
