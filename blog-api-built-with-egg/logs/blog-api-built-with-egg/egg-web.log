@@ -1,14 +1,335 @@
-2020-07-02 23:41:46,832 INFO 6926 [egg:logger] init all loggers with options: {"dir":"/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/logs/blog-api-built-with-egg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"blog-api-built-with-egg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
-2020-07-02 23:41:46,876 INFO 6926 [egg-multipart] stream mode enable
-2020-07-02 23:41:46,942 INFO 6926 [egg-static] starting static serve /public/ -> /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/public
-2020-07-02 23:41:46,944 INFO 6926 [egg-security] use csrf middleware
-2020-07-02 23:41:46,945 INFO 6926 [egg-security] use methodnoallow middleware
-2020-07-02 23:41:46,945 INFO 6926 [egg-security] use noopen middleware
-2020-07-02 23:41:46,945 INFO 6926 [egg-security] use nosniff middleware
-2020-07-02 23:41:46,946 INFO 6926 [egg-security] use xssProtection middleware
-2020-07-02 23:41:46,947 INFO 6926 [egg-security] use xframe middleware
-2020-07-02 23:41:46,948 INFO 6926 [egg-security] use dta middleware
-2020-07-02 23:41:46,948 INFO 6926 [egg-security] compose 7 middlewares into one security middleware
-2020-07-02 23:41:46,961 INFO 6926 [egg:core] dump config after load, 6ms
-2020-07-02 23:41:46,982 INFO 6926 [egg-watcher:application] watcher start success
-2020-07-02 23:41:46,992 INFO 6926 [egg:core] dump config after ready, 5ms
+2020-07-03 00:00:01,017 INFO 7481 [egg-logrotator] app logger reload: got log-reload message
+2020-07-03 00:21:14,365 INFO 8068 [egg:logger] init all loggers with options: {"dir":"/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/logs/blog-api-built-with-egg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"blog-api-built-with-egg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-07-03 00:21:14,419 INFO 8068 [egg-multipart] stream mode enable
+2020-07-03 00:21:15,031 INFO 8068 [egg-static] starting static serve /public/ -> /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/public
+2020-07-03 00:21:15,047 INFO 8068 [egg-security] use csrf middleware
+2020-07-03 00:21:15,071 INFO 8068 [egg-security] use methodnoallow middleware
+2020-07-03 00:21:15,071 INFO 8068 [egg-security] use noopen middleware
+2020-07-03 00:21:15,072 INFO 8068 [egg-security] use nosniff middleware
+2020-07-03 00:21:15,073 INFO 8068 [egg-security] use xssProtection middleware
+2020-07-03 00:21:15,074 INFO 8068 [egg-security] use xframe middleware
+2020-07-03 00:21:15,075 INFO 8068 [egg-security] use dta middleware
+2020-07-03 00:21:15,075 INFO 8068 [egg-security] compose 7 middlewares into one security middleware
+2020-07-03 00:21:15,144 INFO 8068 [egg:core] dump config after load, 41ms
+2020-07-03 00:21:15,155 INFO 8068 [egg-watcher:application] watcher start success
+2020-07-03 00:21:15,162 INFO 8068 [egg:core] dump config after ready, 5ms
+2020-07-03 00:45:04,257 INFO 9242 [egg:logger] init all loggers with options: {"dir":"/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/logs/blog-api-built-with-egg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"blog-api-built-with-egg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-07-03 00:45:04,284 INFO 9242 [egg-multipart] stream mode enable
+2020-07-03 00:45:04,323 INFO 9242 [egg-static] starting static serve /public/ -> /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/public
+2020-07-03 00:45:04,325 INFO 9242 [egg-security] use csrf middleware
+2020-07-03 00:45:04,326 INFO 9242 [egg-security] use methodnoallow middleware
+2020-07-03 00:45:04,326 INFO 9242 [egg-security] use noopen middleware
+2020-07-03 00:45:04,327 INFO 9242 [egg-security] use nosniff middleware
+2020-07-03 00:45:04,327 INFO 9242 [egg-security] use xssProtection middleware
+2020-07-03 00:45:04,327 INFO 9242 [egg-security] use xframe middleware
+2020-07-03 00:45:04,327 INFO 9242 [egg-security] use dta middleware
+2020-07-03 00:45:04,327 INFO 9242 [egg-security] compose 7 middlewares into one security middleware
+2020-07-03 00:45:04,337 INFO 9242 [egg:core] dump config after load, 6ms
+2020-07-03 00:45:04,352 INFO 9242 [egg-watcher:application] watcher start success
+2020-07-03 00:45:04,358 INFO 9242 [egg:core] dump config after ready, 4ms
+2020-07-03 00:50:43,011 INFO 9417 [egg:logger] init all loggers with options: {"dir":"/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/logs/blog-api-built-with-egg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"blog-api-built-with-egg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-07-03 00:50:43,089 INFO 9417 [egg-multipart] stream mode enable
+2020-07-03 00:50:43,663 INFO 9417 [egg-static] starting static serve /public/ -> /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/public
+2020-07-03 00:50:43,676 INFO 9417 [egg-security] use methodnoallow middleware
+2020-07-03 00:50:43,677 INFO 9417 [egg-security] use noopen middleware
+2020-07-03 00:50:43,680 INFO 9417 [egg-security] use nosniff middleware
+2020-07-03 00:50:43,681 INFO 9417 [egg-security] use xssProtection middleware
+2020-07-03 00:50:43,681 INFO 9417 [egg-security] use xframe middleware
+2020-07-03 00:50:43,686 INFO 9417 [egg-security] use dta middleware
+2020-07-03 00:50:43,687 INFO 9417 [egg-security] compose 6 middlewares into one security middleware
+2020-07-03 00:50:43,730 INFO 9417 [egg:core] dump config after load, 10ms
+2020-07-03 00:50:43,750 INFO 9417 [egg-watcher:application] watcher start success
+2020-07-03 00:50:43,759 INFO 9417 [egg:core] dump config after ready, 4ms
+2020-07-03 00:50:44,444 INFO 9449 [egg:logger] init all loggers with options: {"dir":"/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/logs/blog-api-built-with-egg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"blog-api-built-with-egg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-07-03 00:50:44,471 INFO 9449 [egg-multipart] stream mode enable
+2020-07-03 00:50:44,512 INFO 9449 [egg-static] starting static serve /public/ -> /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/public
+2020-07-03 00:50:44,514 INFO 9449 [egg-security] use methodnoallow middleware
+2020-07-03 00:50:44,515 INFO 9449 [egg-security] use noopen middleware
+2020-07-03 00:50:44,515 INFO 9449 [egg-security] use nosniff middleware
+2020-07-03 00:50:44,515 INFO 9449 [egg-security] use xssProtection middleware
+2020-07-03 00:50:44,516 INFO 9449 [egg-security] use xframe middleware
+2020-07-03 00:50:44,516 INFO 9449 [egg-security] use dta middleware
+2020-07-03 00:50:44,516 INFO 9449 [egg-security] compose 6 middlewares into one security middleware
+2020-07-03 00:50:44,526 INFO 9449 [egg:core] dump config after load, 6ms
+2020-07-03 00:50:44,541 INFO 9449 [egg-watcher:application] watcher start success
+2020-07-03 00:50:44,547 INFO 9449 [egg:core] dump config after ready, 4ms
+2020-07-03 00:51:42,465 INFO 9489 [egg:logger] init all loggers with options: {"dir":"/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/logs/blog-api-built-with-egg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"blog-api-built-with-egg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-07-03 00:51:42,502 INFO 9489 [egg-multipart] stream mode enable
+2020-07-03 00:51:42,557 INFO 9489 [egg-static] starting static serve /public/ -> /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/public
+2020-07-03 00:51:42,561 INFO 9489 [egg-security] use methodnoallow middleware
+2020-07-03 00:51:42,562 INFO 9489 [egg-security] use noopen middleware
+2020-07-03 00:51:42,562 INFO 9489 [egg-security] use nosniff middleware
+2020-07-03 00:51:42,562 INFO 9489 [egg-security] use xssProtection middleware
+2020-07-03 00:51:42,563 INFO 9489 [egg-security] use xframe middleware
+2020-07-03 00:51:42,563 INFO 9489 [egg-security] use dta middleware
+2020-07-03 00:51:42,563 INFO 9489 [egg-security] compose 6 middlewares into one security middleware
+2020-07-03 00:51:42,573 INFO 9489 [egg:core] dump config after load, 6ms
+2020-07-03 00:51:42,585 INFO 9489 [egg-watcher:application] watcher start success
+2020-07-03 00:51:42,593 INFO 9489 [egg:core] dump config after ready, 5ms
+2020-07-03 00:51:47,454 INFO 9509 [egg:logger] init all loggers with options: {"dir":"/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/logs/blog-api-built-with-egg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"blog-api-built-with-egg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-07-03 00:51:47,483 INFO 9509 [egg-multipart] stream mode enable
+2020-07-03 00:51:47,526 INFO 9509 [egg-static] starting static serve /public/ -> /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/public
+2020-07-03 00:51:47,528 INFO 9509 [egg-security] use methodnoallow middleware
+2020-07-03 00:51:47,529 INFO 9509 [egg-security] use noopen middleware
+2020-07-03 00:51:47,529 INFO 9509 [egg-security] use nosniff middleware
+2020-07-03 00:51:47,529 INFO 9509 [egg-security] use xssProtection middleware
+2020-07-03 00:51:47,530 INFO 9509 [egg-security] use xframe middleware
+2020-07-03 00:51:47,530 INFO 9509 [egg-security] use dta middleware
+2020-07-03 00:51:47,530 INFO 9509 [egg-security] compose 6 middlewares into one security middleware
+2020-07-03 00:51:47,540 INFO 9509 [egg:core] dump config after load, 6ms
+2020-07-03 00:51:47,556 INFO 9509 [egg-watcher:application] watcher start success
+2020-07-03 00:51:47,563 INFO 9509 [egg:core] dump config after ready, 4ms
+2020-07-03 00:51:51,679 INFO 9530 [egg:logger] init all loggers with options: {"dir":"/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/logs/blog-api-built-with-egg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"blog-api-built-with-egg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-07-03 00:51:51,707 INFO 9530 [egg-multipart] stream mode enable
+2020-07-03 00:51:51,757 INFO 9530 [egg-static] starting static serve /public/ -> /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/public
+2020-07-03 00:51:51,759 INFO 9530 [egg-security] use methodnoallow middleware
+2020-07-03 00:51:51,760 INFO 9530 [egg-security] use noopen middleware
+2020-07-03 00:51:51,760 INFO 9530 [egg-security] use nosniff middleware
+2020-07-03 00:51:51,760 INFO 9530 [egg-security] use xssProtection middleware
+2020-07-03 00:51:51,761 INFO 9530 [egg-security] use xframe middleware
+2020-07-03 00:51:51,761 INFO 9530 [egg-security] use dta middleware
+2020-07-03 00:51:51,761 INFO 9530 [egg-security] compose 6 middlewares into one security middleware
+2020-07-03 00:51:51,772 INFO 9530 [egg:core] dump config after load, 5ms
+2020-07-03 00:51:51,785 INFO 9530 [egg-watcher:application] watcher start success
+2020-07-03 00:51:51,792 INFO 9530 [egg:core] dump config after ready, 5ms
+2020-07-03 00:51:56,384 ERROR 9530 nodejs.ENOENTError: ENOENT: no such file or directory, open '/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/files/upload_95a47986538f0c06ebb969499bb7fdae' (uncaughtException throw 1 times on pid:9530)
+ENOENTError: ENOENT: no such file or directory, open '/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/files/upload_95a47986538f0c06ebb969499bb7fdae' (uncaughtException throw 1 times on pid:9530)
+errno: -2
+code: "ENOENT"
+syscall: "open"
+path: "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/files/upload_95a47986538f0c06ebb969499bb7fdae"
+name: "ENOENTError"
+pid: 9530
+hostname: wen-Lenovo-G480
+
+2020-07-03 00:51:56,474 ERROR 9530 nodejs.ENOENTError: ENOENT: no such file or directory, open '/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/files/upload_6c83bebf4e882e66c838c0f886240270' (uncaughtException throw 2 times on pid:9530)
+ENOENTError: ENOENT: no such file or directory, open '/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/files/upload_6c83bebf4e882e66c838c0f886240270' (uncaughtException throw 2 times on pid:9530)
+errno: -2
+code: "ENOENT"
+syscall: "open"
+path: "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/files/upload_6c83bebf4e882e66c838c0f886240270"
+name: "ENOENTError"
+pid: 9530
+hostname: wen-Lenovo-G480
+
+2020-07-03 00:54:08,962 INFO 9602 [egg:logger] init all loggers with options: {"dir":"/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/logs/blog-api-built-with-egg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"blog-api-built-with-egg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-07-03 00:54:08,990 INFO 9602 [egg-multipart] stream mode enable
+2020-07-03 00:54:09,033 INFO 9602 [egg-static] starting static serve /public/ -> /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/public
+2020-07-03 00:54:09,035 INFO 9602 [egg-security] use methodnoallow middleware
+2020-07-03 00:54:09,035 INFO 9602 [egg-security] use noopen middleware
+2020-07-03 00:54:09,035 INFO 9602 [egg-security] use nosniff middleware
+2020-07-03 00:54:09,036 INFO 9602 [egg-security] use xssProtection middleware
+2020-07-03 00:54:09,036 INFO 9602 [egg-security] use xframe middleware
+2020-07-03 00:54:09,036 INFO 9602 [egg-security] use dta middleware
+2020-07-03 00:54:09,036 INFO 9602 [egg-security] compose 6 middlewares into one security middleware
+2020-07-03 00:54:09,046 INFO 9602 [egg:core] dump config after load, 6ms
+2020-07-03 00:54:09,058 INFO 9602 [egg-watcher:application] watcher start success
+2020-07-03 00:54:09,064 INFO 9602 [egg:core] dump config after ready, 4ms
+2020-07-03 00:54:11,880 INFO 9622 [egg:logger] init all loggers with options: {"dir":"/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/logs/blog-api-built-with-egg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"blog-api-built-with-egg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-07-03 00:54:11,914 INFO 9622 [egg-multipart] stream mode enable
+2020-07-03 00:54:11,966 INFO 9622 [egg-static] starting static serve /public/ -> /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/public
+2020-07-03 00:54:11,969 INFO 9622 [egg-security] use methodnoallow middleware
+2020-07-03 00:54:11,971 INFO 9622 [egg-security] use noopen middleware
+2020-07-03 00:54:11,972 INFO 9622 [egg-security] use nosniff middleware
+2020-07-03 00:54:11,973 INFO 9622 [egg-security] use xssProtection middleware
+2020-07-03 00:54:11,974 INFO 9622 [egg-security] use xframe middleware
+2020-07-03 00:54:11,974 INFO 9622 [egg-security] use dta middleware
+2020-07-03 00:54:11,974 INFO 9622 [egg-security] compose 6 middlewares into one security middleware
+2020-07-03 00:54:11,993 INFO 9622 [egg:core] dump config after load, 11ms
+2020-07-03 00:54:12,010 INFO 9622 [egg-watcher:application] watcher start success
+2020-07-03 00:54:12,017 INFO 9622 [egg:core] dump config after ready, 5ms
+2020-07-03 01:04:49,649 INFO 9933 [egg:logger] init all loggers with options: {"dir":"/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/logs/blog-api-built-with-egg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"blog-api-built-with-egg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-07-03 01:04:49,681 INFO 9933 [egg-multipart] stream mode enable
+2020-07-03 01:04:49,766 INFO 9933 [egg-static] starting static serve /public/ -> /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/public
+2020-07-03 01:04:49,769 INFO 9933 [egg-security] use methodnoallow middleware
+2020-07-03 01:04:49,769 INFO 9933 [egg-security] use noopen middleware
+2020-07-03 01:04:49,770 INFO 9933 [egg-security] use nosniff middleware
+2020-07-03 01:04:49,770 INFO 9933 [egg-security] use xssProtection middleware
+2020-07-03 01:04:49,770 INFO 9933 [egg-security] use xframe middleware
+2020-07-03 01:04:49,771 INFO 9933 [egg-security] use dta middleware
+2020-07-03 01:04:49,771 INFO 9933 [egg-security] compose 6 middlewares into one security middleware
+2020-07-03 01:04:49,783 INFO 9933 [egg:core] dump config after load, 5ms
+2020-07-03 01:04:49,794 INFO 9933 [egg-watcher:application] watcher start success
+2020-07-03 01:04:49,801 INFO 9933 [egg:core] dump config after ready, 5ms
+2020-07-03 01:05:39,504 INFO 9964 [egg:logger] init all loggers with options: {"dir":"/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/logs/blog-api-built-with-egg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"blog-api-built-with-egg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-07-03 01:05:39,532 INFO 9964 [egg-multipart] stream mode enable
+2020-07-03 01:05:39,581 INFO 9964 [egg-static] starting static serve /public/ -> /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/public
+2020-07-03 01:05:39,583 INFO 9964 [egg-security] use methodnoallow middleware
+2020-07-03 01:05:39,583 INFO 9964 [egg-security] use noopen middleware
+2020-07-03 01:05:39,584 INFO 9964 [egg-security] use nosniff middleware
+2020-07-03 01:05:39,584 INFO 9964 [egg-security] use xssProtection middleware
+2020-07-03 01:05:39,584 INFO 9964 [egg-security] use xframe middleware
+2020-07-03 01:05:39,584 INFO 9964 [egg-security] use dta middleware
+2020-07-03 01:05:39,584 INFO 9964 [egg-security] compose 6 middlewares into one security middleware
+2020-07-03 01:05:39,595 INFO 9964 [egg:core] dump config after load, 6ms
+2020-07-03 01:05:39,609 INFO 9964 [egg-watcher:application] watcher start success
+2020-07-03 01:05:39,616 INFO 9964 [egg:core] dump config after ready, 5ms
+2020-07-03 01:06:14,143 INFO 9991 [egg:logger] init all loggers with options: {"dir":"/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/logs/blog-api-built-with-egg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"blog-api-built-with-egg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-07-03 01:06:14,177 INFO 9991 [egg-multipart] stream mode enable
+2020-07-03 01:06:14,234 INFO 9991 [egg-static] starting static serve /public/ -> /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/public
+2020-07-03 01:06:14,237 INFO 9991 [egg-security] use methodnoallow middleware
+2020-07-03 01:06:14,237 INFO 9991 [egg-security] use noopen middleware
+2020-07-03 01:06:14,237 INFO 9991 [egg-security] use nosniff middleware
+2020-07-03 01:06:14,238 INFO 9991 [egg-security] use xssProtection middleware
+2020-07-03 01:06:14,238 INFO 9991 [egg-security] use xframe middleware
+2020-07-03 01:06:14,238 INFO 9991 [egg-security] use dta middleware
+2020-07-03 01:06:14,238 INFO 9991 [egg-security] compose 6 middlewares into one security middleware
+2020-07-03 01:06:14,252 INFO 9991 [egg:core] dump config after load, 8ms
+2020-07-03 01:06:14,267 INFO 9991 [egg-watcher:application] watcher start success
+2020-07-03 01:06:14,274 INFO 9991 [egg:core] dump config after ready, 5ms
+2020-07-03 01:06:33,368 INFO 10014 [egg:logger] init all loggers with options: {"dir":"/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/logs/blog-api-built-with-egg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"blog-api-built-with-egg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-07-03 01:06:33,398 INFO 10014 [egg-multipart] stream mode enable
+2020-07-03 01:06:33,445 INFO 10014 [egg-static] starting static serve /public/ -> /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/public
+2020-07-03 01:06:33,447 INFO 10014 [egg-security] use methodnoallow middleware
+2020-07-03 01:06:33,447 INFO 10014 [egg-security] use noopen middleware
+2020-07-03 01:06:33,448 INFO 10014 [egg-security] use nosniff middleware
+2020-07-03 01:06:33,448 INFO 10014 [egg-security] use xssProtection middleware
+2020-07-03 01:06:33,448 INFO 10014 [egg-security] use xframe middleware
+2020-07-03 01:06:33,449 INFO 10014 [egg-security] use dta middleware
+2020-07-03 01:06:33,449 INFO 10014 [egg-security] compose 6 middlewares into one security middleware
+2020-07-03 01:06:33,458 INFO 10014 [egg:core] dump config after load, 5ms
+2020-07-03 01:06:33,470 INFO 10014 [egg-watcher:application] watcher start success
+2020-07-03 01:06:33,476 INFO 10014 [egg:core] dump config after ready, 4ms
+2020-07-03 01:07:28,108 INFO 10041 [egg:logger] init all loggers with options: {"dir":"/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/logs/blog-api-built-with-egg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"blog-api-built-with-egg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-07-03 01:07:28,141 INFO 10041 [egg-multipart] stream mode enable
+2020-07-03 01:07:28,196 INFO 10041 [egg-static] starting static serve /public/ -> /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/public
+2020-07-03 01:07:28,199 INFO 10041 [egg-security] use methodnoallow middleware
+2020-07-03 01:07:28,199 INFO 10041 [egg-security] use noopen middleware
+2020-07-03 01:07:28,199 INFO 10041 [egg-security] use nosniff middleware
+2020-07-03 01:07:28,200 INFO 10041 [egg-security] use xssProtection middleware
+2020-07-03 01:07:28,200 INFO 10041 [egg-security] use xframe middleware
+2020-07-03 01:07:28,200 INFO 10041 [egg-security] use dta middleware
+2020-07-03 01:07:28,200 INFO 10041 [egg-security] compose 6 middlewares into one security middleware
+2020-07-03 01:07:28,213 INFO 10041 [egg:core] dump config after load, 6ms
+2020-07-03 01:07:28,227 INFO 10041 [egg-watcher:application] watcher start success
+2020-07-03 01:07:28,234 INFO 10041 [egg:core] dump config after ready, 4ms
+2020-07-03 01:08:47,708 INFO 10155 [egg:logger] init all loggers with options: {"dir":"/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/logs/blog-api-built-with-egg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"blog-api-built-with-egg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-07-03 01:08:47,741 INFO 10155 [egg-multipart] stream mode enable
+2020-07-03 01:08:47,800 INFO 10155 [egg-static] starting static serve /public/ -> /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/public
+2020-07-03 01:08:47,803 INFO 10155 [egg-security] use methodnoallow middleware
+2020-07-03 01:08:47,803 INFO 10155 [egg-security] use noopen middleware
+2020-07-03 01:08:47,804 INFO 10155 [egg-security] use nosniff middleware
+2020-07-03 01:08:47,804 INFO 10155 [egg-security] use xssProtection middleware
+2020-07-03 01:08:47,805 INFO 10155 [egg-security] use xframe middleware
+2020-07-03 01:08:47,805 INFO 10155 [egg-security] use dta middleware
+2020-07-03 01:08:47,805 INFO 10155 [egg-security] compose 6 middlewares into one security middleware
+2020-07-03 01:08:47,820 INFO 10155 [egg:core] dump config after load, 8ms
+2020-07-03 01:08:47,835 INFO 10155 [egg-watcher:application] watcher start success
+2020-07-03 01:08:47,841 INFO 10155 [egg:core] dump config after ready, 4ms
+2020-07-03 01:09:07,581 INFO 10177 [egg:logger] init all loggers with options: {"dir":"/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/logs/blog-api-built-with-egg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"blog-api-built-with-egg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-07-03 01:09:07,611 INFO 10177 [egg-multipart] stream mode enable
+2020-07-03 01:09:07,788 INFO 10177 [egg-static] starting static serve /public/ -> /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/public
+2020-07-03 01:09:07,792 INFO 10177 [egg-security] use methodnoallow middleware
+2020-07-03 01:09:07,793 INFO 10177 [egg-security] use noopen middleware
+2020-07-03 01:09:07,793 INFO 10177 [egg-security] use nosniff middleware
+2020-07-03 01:09:07,794 INFO 10177 [egg-security] use xssProtection middleware
+2020-07-03 01:09:07,795 INFO 10177 [egg-security] use xframe middleware
+2020-07-03 01:09:07,796 INFO 10177 [egg-security] use dta middleware
+2020-07-03 01:09:07,796 INFO 10177 [egg-security] compose 6 middlewares into one security middleware
+2020-07-03 01:09:07,809 INFO 10177 [egg:core] dump config after load, 7ms
+2020-07-03 01:09:07,826 INFO 10177 [egg-watcher:application] watcher start success
+2020-07-03 01:09:07,965 INFO 10177 [egg:core] dump config after ready, 136ms
+2020-07-03 01:09:11,248 INFO 10197 [egg:logger] init all loggers with options: {"dir":"/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/logs/blog-api-built-with-egg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"blog-api-built-with-egg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-07-03 01:09:11,293 INFO 10197 [egg-multipart] stream mode enable
+2020-07-03 01:09:11,374 INFO 10197 [egg-static] starting static serve /public/ -> /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/public
+2020-07-03 01:09:11,378 INFO 10197 [egg-security] use methodnoallow middleware
+2020-07-03 01:09:11,378 INFO 10197 [egg-security] use noopen middleware
+2020-07-03 01:09:11,379 INFO 10197 [egg-security] use nosniff middleware
+2020-07-03 01:09:11,379 INFO 10197 [egg-security] use xssProtection middleware
+2020-07-03 01:09:11,380 INFO 10197 [egg-security] use xframe middleware
+2020-07-03 01:09:11,380 INFO 10197 [egg-security] use dta middleware
+2020-07-03 01:09:11,380 INFO 10197 [egg-security] compose 6 middlewares into one security middleware
+2020-07-03 01:09:11,402 INFO 10197 [egg:core] dump config after load, 11ms
+2020-07-03 01:09:11,421 INFO 10197 [egg-watcher:application] watcher start success
+2020-07-03 01:09:11,433 INFO 10197 [egg:core] dump config after ready, 7ms
+2020-07-03 01:14:06,301 INFO 10256 [egg:logger] init all loggers with options: {"dir":"/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/logs/blog-api-built-with-egg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"blog-api-built-with-egg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-07-03 01:14:06,330 INFO 10256 [egg-multipart] stream mode enable
+2020-07-03 01:14:06,394 INFO 10256 [egg-static] starting static serve /public/ -> /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/public
+2020-07-03 01:14:06,400 INFO 10256 [egg-security] use methodnoallow middleware
+2020-07-03 01:14:06,400 INFO 10256 [egg-security] use noopen middleware
+2020-07-03 01:14:06,401 INFO 10256 [egg-security] use nosniff middleware
+2020-07-03 01:14:06,401 INFO 10256 [egg-security] use xssProtection middleware
+2020-07-03 01:14:06,402 INFO 10256 [egg-security] use xframe middleware
+2020-07-03 01:14:06,402 INFO 10256 [egg-security] use dta middleware
+2020-07-03 01:14:06,402 INFO 10256 [egg-security] compose 6 middlewares into one security middleware
+2020-07-03 01:14:06,416 INFO 10256 [egg:core] dump config after load, 10ms
+2020-07-03 01:14:06,434 INFO 10256 [egg-watcher:application] watcher start success
+2020-07-03 01:14:06,442 INFO 10256 [egg:core] dump config after ready, 6ms
+2020-07-03 01:14:07,092 INFO 10267 [egg:logger] init all loggers with options: {"dir":"/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/logs/blog-api-built-with-egg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"blog-api-built-with-egg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-07-03 01:14:07,127 INFO 10267 [egg-multipart] stream mode enable
+2020-07-03 01:14:07,201 INFO 10267 [egg-static] starting static serve /public/ -> /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/public
+2020-07-03 01:14:07,206 INFO 10267 [egg-security] use methodnoallow middleware
+2020-07-03 01:14:07,206 INFO 10267 [egg-security] use noopen middleware
+2020-07-03 01:14:07,207 INFO 10267 [egg-security] use nosniff middleware
+2020-07-03 01:14:07,207 INFO 10267 [egg-security] use xssProtection middleware
+2020-07-03 01:14:07,208 INFO 10267 [egg-security] use xframe middleware
+2020-07-03 01:14:07,208 INFO 10267 [egg-security] use dta middleware
+2020-07-03 01:14:07,208 INFO 10267 [egg-security] compose 6 middlewares into one security middleware
+2020-07-03 01:14:07,227 INFO 10267 [egg:core] dump config after load, 11ms
+2020-07-03 01:14:07,242 INFO 10267 [egg-watcher:application] watcher start success
+2020-07-03 01:14:07,250 INFO 10267 [egg:core] dump config after ready, 6ms
+2020-07-03 01:14:13,707 INFO 10287 [egg:logger] init all loggers with options: {"dir":"/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/logs/blog-api-built-with-egg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"blog-api-built-with-egg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-07-03 01:14:13,739 INFO 10287 [egg-multipart] stream mode enable
+2020-07-03 01:14:13,791 INFO 10287 [egg-static] starting static serve /public/ -> /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/public
+2020-07-03 01:14:13,795 INFO 10287 [egg-security] use methodnoallow middleware
+2020-07-03 01:14:13,795 INFO 10287 [egg-security] use noopen middleware
+2020-07-03 01:14:13,796 INFO 10287 [egg-security] use nosniff middleware
+2020-07-03 01:14:13,796 INFO 10287 [egg-security] use xssProtection middleware
+2020-07-03 01:14:13,797 INFO 10287 [egg-security] use xframe middleware
+2020-07-03 01:14:13,797 INFO 10287 [egg-security] use dta middleware
+2020-07-03 01:14:13,797 INFO 10287 [egg-security] compose 6 middlewares into one security middleware
+2020-07-03 01:14:13,808 INFO 10287 [egg:core] dump config after load, 6ms
+2020-07-03 01:14:13,821 INFO 10287 [egg-watcher:application] watcher start success
+2020-07-03 01:14:13,828 INFO 10287 [egg:core] dump config after ready, 5ms
+2020-07-03 01:14:33,045 INFO 10309 [egg:logger] init all loggers with options: {"dir":"/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/logs/blog-api-built-with-egg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"blog-api-built-with-egg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-07-03 01:14:33,075 INFO 10309 [egg-multipart] stream mode enable
+2020-07-03 01:14:33,121 INFO 10309 [egg-static] starting static serve /public/ -> /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/public
+2020-07-03 01:14:33,123 INFO 10309 [egg-security] use methodnoallow middleware
+2020-07-03 01:14:33,124 INFO 10309 [egg-security] use noopen middleware
+2020-07-03 01:14:33,124 INFO 10309 [egg-security] use nosniff middleware
+2020-07-03 01:14:33,124 INFO 10309 [egg-security] use xssProtection middleware
+2020-07-03 01:14:33,125 INFO 10309 [egg-security] use xframe middleware
+2020-07-03 01:14:33,125 INFO 10309 [egg-security] use dta middleware
+2020-07-03 01:14:33,125 INFO 10309 [egg-security] compose 6 middlewares into one security middleware
+2020-07-03 01:14:33,135 INFO 10309 [egg:core] dump config after load, 5ms
+2020-07-03 01:14:33,147 INFO 10309 [egg-watcher:application] watcher start success
+2020-07-03 01:14:33,154 INFO 10309 [egg:core] dump config after ready, 5ms
+2020-07-03 01:14:56,448 INFO 10373 [egg:logger] init all loggers with options: {"dir":"/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/logs/blog-api-built-with-egg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"blog-api-built-with-egg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-07-03 01:14:56,478 INFO 10373 [egg-multipart] stream mode enable
+2020-07-03 01:14:56,528 INFO 10373 [egg-static] starting static serve /public/ -> /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/public
+2020-07-03 01:14:56,531 INFO 10373 [egg-security] use methodnoallow middleware
+2020-07-03 01:14:56,531 INFO 10373 [egg-security] use noopen middleware
+2020-07-03 01:14:56,532 INFO 10373 [egg-security] use nosniff middleware
+2020-07-03 01:14:56,532 INFO 10373 [egg-security] use xssProtection middleware
+2020-07-03 01:14:56,532 INFO 10373 [egg-security] use xframe middleware
+2020-07-03 01:14:56,533 INFO 10373 [egg-security] use dta middleware
+2020-07-03 01:14:56,533 INFO 10373 [egg-security] compose 6 middlewares into one security middleware
+2020-07-03 01:14:56,543 INFO 10373 [egg:core] dump config after load, 6ms
+2020-07-03 01:14:56,558 INFO 10373 [egg-watcher:application] watcher start success
+2020-07-03 01:14:56,566 INFO 10373 [egg:core] dump config after ready, 5ms
+2020-07-03 01:15:55,262 INFO 10434 [egg:logger] init all loggers with options: {"dir":"/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/logs/blog-api-built-with-egg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"blog-api-built-with-egg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-07-03 01:15:55,292 INFO 10434 [egg-multipart] stream mode enable
+2020-07-03 01:15:55,336 INFO 10434 [egg-static] starting static serve /public/ -> /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/public
+2020-07-03 01:15:55,339 INFO 10434 [egg-security] use methodnoallow middleware
+2020-07-03 01:15:55,339 INFO 10434 [egg-security] use noopen middleware
+2020-07-03 01:15:55,340 INFO 10434 [egg-security] use nosniff middleware
+2020-07-03 01:15:55,340 INFO 10434 [egg-security] use xssProtection middleware
+2020-07-03 01:15:55,340 INFO 10434 [egg-security] use xframe middleware
+2020-07-03 01:15:55,341 INFO 10434 [egg-security] use dta middleware
+2020-07-03 01:15:55,341 INFO 10434 [egg-security] compose 6 middlewares into one security middleware
+2020-07-03 01:15:55,351 INFO 10434 [egg:core] dump config after load, 6ms
+2020-07-03 01:15:55,363 INFO 10434 [egg-watcher:application] watcher start success
+2020-07-03 01:15:55,370 INFO 10434 [egg:core] dump config after ready, 4ms
+2020-07-03 01:16:00,761 INFO 10454 [egg:logger] init all loggers with options: {"dir":"/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/logs/blog-api-built-with-egg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"blog-api-built-with-egg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-07-03 01:16:00,800 INFO 10454 [egg-multipart] stream mode enable
+2020-07-03 01:16:00,863 INFO 10454 [egg-static] starting static serve /public/ -> /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/public
+2020-07-03 01:16:00,867 INFO 10454 [egg-security] use methodnoallow middleware
+2020-07-03 01:16:00,867 INFO 10454 [egg-security] use noopen middleware
+2020-07-03 01:16:00,867 INFO 10454 [egg-security] use nosniff middleware
+2020-07-03 01:16:00,869 INFO 10454 [egg-security] use xssProtection middleware
+2020-07-03 01:16:00,870 INFO 10454 [egg-security] use xframe middleware
+2020-07-03 01:16:00,870 INFO 10454 [egg-security] use dta middleware
+2020-07-03 01:16:00,870 INFO 10454 [egg-security] compose 6 middlewares into one security middleware
+2020-07-03 01:16:00,883 INFO 10454 [egg:core] dump config after load, 7ms
+2020-07-03 01:16:00,898 INFO 10454 [egg-watcher:application] watcher start success
+2020-07-03 01:16:00,908 INFO 10454 [egg:core] dump config after ready, 8ms

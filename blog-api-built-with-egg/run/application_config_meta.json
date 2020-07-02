@@ -1,17 +1,8 @@
 {
   "keys": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/config/config.default.js",
-  "session": {
-    "maxAge": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-session/config/config.default.js",
-    "key": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-session/config/config.default.js",
-    "httpOnly": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-session/config/config.default.js",
-    "encrypt": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-session/config/config.default.js"
-  },
   "security": {
-    "domainWhiteList": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-security/config/config.default.js",
-    "protocolWhiteList": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-security/config/config.default.js",
-    "defaultMiddleware": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-security/config/config.default.js",
     "csrf": {
-      "enable": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-security/config/config.default.js",
+      "enable": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/config/config.default.js",
       "type": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-security/config/config.default.js",
       "ignoreJSON": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-security/config/config.default.js",
       "useSession": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-security/config/config.default.js",
@@ -22,6 +13,9 @@
       "queryName": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-security/config/config.default.js",
       "refererWhiteList": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-security/config/config.default.js"
     },
+    "domainWhiteList": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-security/config/config.default.js",
+    "protocolWhiteList": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-security/config/config.default.js",
+    "defaultMiddleware": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-security/config/config.default.js",
     "xframe": {
       "enable": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-security/config/config.default.js",
       "value": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-security/config/config.default.js"
@@ -59,6 +53,12 @@
       "ipBlackList": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-security/config/config.default.js",
       "checkAddress": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-security/config/config.default.js"
     }
+  },
+  "session": {
+    "maxAge": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-session/config/config.default.js",
+    "key": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-session/config/config.default.js",
+    "httpOnly": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-session/config/config.default.js",
+    "encrypt": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-session/config/config.default.js"
   },
   "helper": {
     "shtml": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-security/config/config.default.js"
@@ -166,7 +166,8 @@
     "author": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg/config/config.default.js",
     "license": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg/config/config.default.js",
     "dependencies": {
-      "egg": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg/config/config.default.js"
+      "egg": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg/config/config.default.js",
+      "formidable": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg/config/config.default.js"
     },
     "devDependencies": {
       "egg-bin": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg/config/config.default.js"

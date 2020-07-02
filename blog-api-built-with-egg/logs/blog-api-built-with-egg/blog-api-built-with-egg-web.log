@@ -1,0 +1,61 @@
+2020-07-03 00:48:29,347 WARN 9242 [-/::1/-/9ms POST /api/upload/mult] missing csrf token. See https://eggjs.org/zh-cn/core/security.html#安全威胁csrf的防范
+2020-07-03 00:48:29,351 WARN 9242 [-/::1/-/12ms POST /api/upload/mult] nodejs.ForbiddenError: missing csrf token
+    at Object.throw (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa/lib/context.js:97:11)
+    at Object.assertCsrf (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-security/app/extend/context.js:162:32)
+    at csrf (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-security/lib/middlewares/csrf.js:33:9)
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-security/node_modules/koa-compose/index.js:42:32)
+    at /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-security/node_modules/koa-compose/index.js:34:12
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at session (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa-session/index.js:41:13)
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at overrideMethod (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa-override/index.js:38:12)
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+message: "missing csrf token"
+pid: 9242
+hostname: wen-Lenovo-G480
+
+2020-07-03 00:50:48,450 ERROR 9449 [-/::1/-/10ms POST /api/upload/mult] nodejs.ReferenceError: path is not defined
+    at /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/middleware/file_upload.js:7:18
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa-compose/index.js:44:32)
+    at next (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa-compose/index.js:45:18)
+    at /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa-compose/index.js:44:32)
+    at /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa-compose/index.js:36:12
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+
+pid: 9449
+hostname: wen-Lenovo-G480
+
+2020-07-03 01:07:31,963 ERROR 10041 [-/::1/-/10ms POST /api/upload/mult] nodejs.TypeError: ctx.method.toLowercase is not a function
+    at /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/middleware/file_upload.js:7:28
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa-compose/index.js:44:32)
+    at next (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa-compose/index.js:45:18)
+    at /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa-compose/index.js:44:32)
+    at /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa-compose/index.js:36:12
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+
+pid: 10041
+hostname: wen-Lenovo-G480
+
+2020-07-03 01:15:31,345 ERROR 10373 [-/::1/-/8ms POST /api/upload/mult] nodejs.ReferenceError: type is not defined
+    at /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/middleware/file_upload.js:9:8
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa-compose/index.js:44:32)
+    at next (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa-compose/index.js:45:18)
+    at /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa-compose/index.js:44:32)
+    at /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa-compose/index.js:36:12
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+
+pid: 10373
+hostname: wen-Lenovo-G480
+

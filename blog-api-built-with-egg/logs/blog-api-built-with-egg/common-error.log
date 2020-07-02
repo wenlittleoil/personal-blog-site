@@ -1,0 +1,65 @@
+2020-07-03 00:50:48,449 ERROR 9449 [-/::1/-/10ms POST /api/upload/mult] nodejs.ReferenceError: path is not defined
+    at /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/middleware/file_upload.js:7:18
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa-compose/index.js:44:32)
+    at next (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa-compose/index.js:45:18)
+    at /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa-compose/index.js:44:32)
+    at /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa-compose/index.js:36:12
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+
+pid: 9449
+hostname: wen-Lenovo-G480
+
+2020-07-03 00:51:56,382 ERROR 9530 nodejs.ENOENTError: ENOENT: no such file or directory, open '/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/files/upload_95a47986538f0c06ebb969499bb7fdae' (uncaughtException throw 1 times on pid:9530)
+ENOENTError: ENOENT: no such file or directory, open '/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/files/upload_95a47986538f0c06ebb969499bb7fdae' (uncaughtException throw 1 times on pid:9530)
+errno: -2
+code: "ENOENT"
+syscall: "open"
+path: "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/files/upload_95a47986538f0c06ebb969499bb7fdae"
+name: "ENOENTError"
+pid: 9530
+hostname: wen-Lenovo-G480
+
+2020-07-03 00:51:56,474 ERROR 9530 nodejs.ENOENTError: ENOENT: no such file or directory, open '/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/files/upload_6c83bebf4e882e66c838c0f886240270' (uncaughtException throw 2 times on pid:9530)
+ENOENTError: ENOENT: no such file or directory, open '/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/files/upload_6c83bebf4e882e66c838c0f886240270' (uncaughtException throw 2 times on pid:9530)
+errno: -2
+code: "ENOENT"
+syscall: "open"
+path: "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/files/upload_6c83bebf4e882e66c838c0f886240270"
+name: "ENOENTError"
+pid: 9530
+hostname: wen-Lenovo-G480
+
+2020-07-03 01:07:31,962 ERROR 10041 [-/::1/-/10ms POST /api/upload/mult] nodejs.TypeError: ctx.method.toLowercase is not a function
+    at /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/middleware/file_upload.js:7:28
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa-compose/index.js:44:32)
+    at next (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa-compose/index.js:45:18)
+    at /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa-compose/index.js:44:32)
+    at /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa-compose/index.js:36:12
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+
+pid: 10041
+hostname: wen-Lenovo-G480
+
+2020-07-03 01:15:31,345 ERROR 10373 [-/::1/-/8ms POST /api/upload/mult] nodejs.ReferenceError: type is not defined
+    at /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/app/middleware/file_upload.js:9:8
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa-compose/index.js:44:32)
+    at next (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa-compose/index.js:45:18)
+    at /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/@eggjs/router/lib/router.js:190:18
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa-compose/index.js:44:32)
+    at /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa-compose/index.js:36:12
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/@eggjs/router/lib/router.js:195:33)
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+    at /home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-development/app/middleware/egg_loader_trace.js:9:56
+    at dispatch (/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/koa/node_modules/koa-compose/index.js:42:32)
+
+pid: 10373
+hostname: wen-Lenovo-G480
+
