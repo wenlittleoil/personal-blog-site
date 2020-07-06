@@ -12,7 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "egg": "^2.27.0",
-    "formidable": "^1.2.2"
+    "formidable": "^1.2.2",
+    "winston": "^3.3.3"
   },
   "devDependencies": {
     "egg-bin": "^4.14.1"
