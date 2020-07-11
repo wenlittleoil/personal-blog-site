@@ -193,14 +193,15 @@
       "main": "index.js",
       "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "egg-bin dev"
+        "dev": "egg-bin dev --port 7001"
       },
       "keywords": [],
       "author": "",
       "license": "ISC",
       "dependencies": {
         "egg": "^2.27.0",
-        "formidable": "^1.2.2"
+        "formidable": "^1.2.2",
+        "winston": "^3.3.3"
       },
       "devDependencies": {
         "egg-bin": "^4.14.1"
@@ -240,11 +241,11 @@
       "returnRawBody": true
     },
     "logger": {
-      "dir": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/logs/blog-api-built-with-egg",
+      "dir": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/logs/egg-logger",
       "encoding": "utf8",
       "env": "local",
       "level": "INFO",
-      "consoleLevel": "INFO",
+      "consoleLevel": "DEBUG",
       "disableConsoleAfterReady": false,
       "outputJSON": false,
       "buffer": true,
