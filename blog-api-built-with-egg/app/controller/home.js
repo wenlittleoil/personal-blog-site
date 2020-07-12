@@ -2,15 +2,77 @@ const { Controller } = require('egg');
 const winston = require('winston');
 const path = require('path');
 
+const {
+  combine,
+  timestamp,
+  label,
+  printf,
+  simple,
+  json,
+  colorize,
+} = winston.format;
+
+const myFormat = printf(({
+  level,
+  message,
+  label,
+  timestamp,
+  data,
+}) => {
+  return `${timestamp} [${level}] ${message} -- {${JSON.stringify(data)}} --${label}`;
+});
+
+const ignorePrivate = winston.format((info, opts) => {
+  // console.log('FUNC-INFO: ', info, opts)
+  if (info.private) return false;
+  info.owner = 'wenlittleoil';
+  return info;
+});
+
 const logger = winston.createLogger({
   level: 'info',
+  format: combine(
+    // label({
+    //   label: 'media-report-preview',
+    // }),
+    // timestamp(),
+
+    // myFormat,
+    // simple(),
+
+    ignorePrivate(),
+    json(),
+  ),
   transports: [
-    new winston.transports.Console(),
+    new winston.transports.Console({
+      format: combine(
+        colorize(),
+        json(),
+      ),
+    }),
     new winston.transports.File({
       // filename: 'winston-logs/myown-test.log'
       filename: path.resolve(__dirname, '../../logs/winston/my-test.log'),
     }),
   ],
+
+  // unuse, egg-logger has handle this error
+  exceptionHandlers: [
+    new winston.transports.File({
+      filename: path.resolve(__dirname, '../../logs/winston/my-exception.log'),
+    }),
+  ],
+
+  rejectionHandlers: [
+    new winston.transports.File({
+      filename: path.resolve(__dirname, '../../logs/winston/my-rejection.log'),
+    }),
+  ],
+
+});
+
+const childLogger = logger.child({
+  reqId: '666'
 });
 
 class HomeCtl extends Controller {
@@ -23,7 +85,20 @@ class HomeCtl extends Controller {
     //     ua: ctx.request.headers['user-agent'],
     //   }
     // });
-    logger.info('somebody are accessing homepage now! haha');
+
+    // Promise.reject('test promise reject error from wenlittleoil.');
+
+    logger.info('somebody are accessing homepage now!', {
+      // timestamp: Date.now(),
+      // label: 'media-report',
+      // private: true, // if private true, current log record will be ignored
+      ua: ctx.request.headers['user-agent'],
+      message: ' are you ready to provide serive for him.', // auto concat before provided
+    });
+    // childLogger.log({
+    //   level: 'info',
+    //   message: 'child log found somebody access homepage',
+    // });
 
     ctx.body = 'hello world';
   }
