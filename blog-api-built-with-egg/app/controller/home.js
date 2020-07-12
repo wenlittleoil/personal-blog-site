@@ -1,6 +1,7 @@
 const { Controller } = require('egg');
 const winston = require('winston');
 const path = require('path');
+require('winston-daily-rotate-file');
 
 const {
   combine,
@@ -50,9 +51,17 @@ const logger = winston.createLogger({
         json(),
       ),
     }),
-    new winston.transports.File({
-      // filename: 'winston-logs/myown-test.log'
-      filename: path.resolve(__dirname, '../../logs/winston/my-test.log'),
+
+    // new winston.transports.File({
+    //   // filename: 'winston-logs/myown-test.log'
+    //   filename: path.resolve(__dirname, '../../logs/winston/my-test.log'),
+    // }),
+    new winston.transports.DailyRotateFile({
+      dirname: path.resolve(__dirname, '../../logs/winston'),
+      filename: 'myegg-%DATE%',
+      datePattern: 'YYYY-MM-DD',
+      maxSize: '1m',
+      maxFiles: '40d',
     }),
   ],
 
