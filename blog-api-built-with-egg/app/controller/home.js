@@ -80,10 +80,6 @@ const logger = winston.createLogger({
 
 });
 
-const childLogger = logger.child({
-  reqId: '666'
-});
-
 class HomeCtl extends Controller {
   async index() {
     const { ctx } = this;
@@ -104,10 +100,6 @@ class HomeCtl extends Controller {
       ua: ctx.request.headers['user-agent'],
       message: ' are you ready to provide serive for him.', // auto concat before provided
     });
-    // childLogger.log({
-    //   level: 'info',
-    //   message: 'child log found somebody access homepage',
-    // });
 
     ctx.body = 'hello world';
   }
