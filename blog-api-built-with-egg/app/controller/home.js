@@ -23,25 +23,17 @@ const myFormat = printf(({
   return `${timestamp} [${level}] ${message} -- {${JSON.stringify(data)}} --${label}`;
 });
 
-const ignorePrivate = winston.format((info, opts) => {
-  // console.log('FUNC-INFO: ', info, opts)
-  if (info.private) return false;
-  info.owner = 'wenlittleoil';
-  return info;
-});
 
 const logger = winston.createLogger({
   level: 'info',
   format: combine(
-    // label({
-    //   label: 'media-report-preview',
-    // }),
-    // timestamp(),
+    label({
+      label: 'media-report-preview',
+    }),
+    timestamp(),
 
     // myFormat,
     // simple(),
-
-    ignorePrivate(),
     json(),
   ),
   transports: [
