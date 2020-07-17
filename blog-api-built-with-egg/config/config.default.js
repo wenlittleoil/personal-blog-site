@@ -13,3 +13,7 @@ exports.logger = {
   level: 'INFO',
   consoleLevel: 'DEBUG',
 }
+
+exports.middleware = [
+  'access',
+];
