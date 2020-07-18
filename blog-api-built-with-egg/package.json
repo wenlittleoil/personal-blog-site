@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "egg": "^2.27.0",
+    "egg-passport": "^2.1.1",
     "formidable": "^1.2.2",
     "lodash": "^4.17.19",
     "uuid": "^8.2.0",
