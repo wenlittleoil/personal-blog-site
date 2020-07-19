@@ -17,8 +17,3 @@ exports.logger = {
 exports.middleware = [
   'access',
 ];
-
-exports.passport = {
-  enable: true,
-  package: 'egg-passport',
-};

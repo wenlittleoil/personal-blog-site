@@ -172,6 +172,7 @@
       "license": "ISC",
       "dependencies": {
         "egg": "^2.27.0",
+        "egg-passport": "^2.1.1",
         "formidable": "^1.2.2",
         "lodash": "^4.17.19",
         "uuid": "^8.2.0",
@@ -432,6 +433,19 @@
       "from": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg/config/plugin.js",
       "path": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-view",
       "version": "2.1.2"
+    },
+    "passport": {
+      "enable": true,
+      "package": "egg-passport",
+      "name": "passport",
+      "dependencies": [
+        "session"
+      ],
+      "optionalDependencies": [],
+      "env": [],
+      "from": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/config/plugin.js",
+      "path": "/home/wen/resource/works/nodejs/personal-blog-site/blog-api-built-with-egg/node_modules/egg-passport",
+      "version": "2.1.1"
     }
   }
 }
