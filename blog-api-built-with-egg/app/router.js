@@ -1,8 +1,10 @@
-
+const ip = require('ip');
 
 module.exports = app => {
   const { controller } = app;
   const fileUpload = app.middleware.fileUpload({});
+
+  console.log('my ip address: ', ip.address());
 
   app.get('/', controller.home.index);
   app.post('/api/upload/mult', fileUpload, controller.upload.mult);

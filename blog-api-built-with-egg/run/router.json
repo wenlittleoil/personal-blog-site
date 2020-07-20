@@ -34,6 +34,7 @@
     "path": "/api/login",
     "regexp": "/^\\/api\\/login(?:\\/(?=$))?$/",
     "stack": [
+      "passportAuthenticate",
       "wrappedController"
     ]
   }
