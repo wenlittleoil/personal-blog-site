@@ -5,6 +5,7 @@ module.exports = app => {
   const fileUpload = app.middleware.fileUpload({});
 
   console.log('my ip address: ', ip.address());
+  console.log(ip.isEqual('0:0:0:1', '0:0:0:1'))
 
   app.get('/', controller.home.index);
   app.post('/api/upload/mult', fileUpload, controller.upload.mult);
