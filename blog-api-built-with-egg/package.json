@@ -15,7 +15,7 @@
     "egg-passport": "^2.1.1",
     "formidable": "^1.2.2",
     "ip": "^1.1.5",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "uuid": "^8.2.0",
     "winston": "^3.3.3",
     "winston-daily-rotate-file": "^4.5.0"
